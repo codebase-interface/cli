@@ -1,0 +1,60 @@
+site_name: Codebase Interface
+site_description: A documented set of principles that aim to promote the ease of use of codebases across languages and frameworks
+site_url: https://codebaseinterface.org
+repo_url: https://github.com/codebase-interface/codebaseinterface
+repo_name: codebase-interface/codebaseinterface
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.action.edit
+    - toc.integrate
+  palette:
+    - scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+nav:
+  - Welcome: README.md
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: date
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/codebaseinterface/codebaseinterface
+
+copyright: Copyright &copy; 2023-2025 Codebase Interface Contributors
