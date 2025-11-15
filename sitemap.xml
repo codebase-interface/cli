@@ -4,4 +4,20 @@
          <loc>https://codebaseinterface.org/</loc>
          <lastmod>2025-11-15</lastmod>
     </url>
+    <url>
+         <loc>https://codebaseinterface.org/agents/</loc>
+         <lastmod>2025-11-15</lastmod>
+    </url>
+    <url>
+         <loc>https://codebaseinterface.org/configuration/</loc>
+         <lastmod>2025-11-15</lastmod>
+    </url>
+    <url>
+         <loc>https://codebaseinterface.org/usage/</loc>
+         <lastmod>2025-11-15</lastmod>
+    </url>
+    <url>
+         <loc>https://codebaseinterface.org/examples/</loc>
+         <lastmod>2025-11-15</lastmod>
+    </url>
 </urlset>

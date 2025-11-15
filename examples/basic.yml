@@ -1,0 +1,45 @@
+# Basic Project Configuration
+# Suitable for small projects and teams starting with codebase validation
+# Focuses on essential files with minimal complexity
+
+validation:
+  agents:
+    # Essential files validation - checks for basic project documentation
+    essential-files:
+      enabled: true
+      require_readme: true           # README.md or README.rst required
+      require_contributing: true     # CONTRIBUTING.md required
+      require_docs_directory: false # Docs directory optional for small projects
+      
+    # Git configuration - ensures basic Git setup
+    git-configuration:
+      enabled: true
+      require_gitignore: true        # .gitignore required
+      require_gitattributes: false   # .gitattributes optional
+      require_editorconfig: true     # .editorconfig for consistency
+      
+    # Development standards - basic commit message validation
+    development-standards:
+      enabled: true
+      check_commit_history: true
+      commit_history_depth: 5        # Check last 5 commits only
+      require_conventional_commits: false  # Relaxed for small teams
+      validation_threshold: 0.6      # 60% of commits should be good
+
+  # Output configuration
+  output:
+    format: "table"                  # Human-readable table format
+    verbose: false                   # Concise output
+    
+  # Scoring thresholds
+  scoring:
+    pass_threshold: 0.7              # 70% score needed to pass
+    warning_threshold: 0.5           # Below 50% is critical failure
+
+# Example usage:
+# codebase-cli validate
+# Expected to pass with basic project structure:
+# - README.md
+# - CONTRIBUTING.md  
+# - .gitignore
+# - .editorconfig

@@ -1,0 +1,147 @@
+# Open Source Project Configuration
+# Optimized for open source projects with community contributions
+# Emphasizes documentation, contribution guidelines, and welcoming setup
+
+validation:
+  agents:
+    # Comprehensive essential files for open source
+    essential-files:
+      enabled: true
+      require_readme: true
+      require_contributing: true
+      require_docs_directory: true
+      docs_requirements:
+        require_usage_guide: true
+        require_examples: true
+        min_doc_files: 5             # Extensive documentation
+      readme_quality:
+        min_lines: 50                # Comprehensive README
+        require_description: true
+        require_installation: true
+        require_usage: true
+        check_badges: true           # Status badges important for OSS
+      custom_files:
+        # Essential open source files
+        - pattern: "LICENSE*"
+          required: true
+          description: "License file mandatory for open source"
+        - pattern: "CODE_OF_CONDUCT*"
+          required: true
+          description: "Code of conduct for community"
+        - pattern: "SECURITY*"
+          required: true
+          description: "Security policy"
+        - pattern: "CHANGELOG*"
+          required: true
+          description: "Changelog for releases"
+        - pattern: ".github/ISSUE_TEMPLATE/*"
+          required: true
+          description: "Issue templates"
+        - pattern: ".github/PULL_REQUEST_TEMPLATE*"
+          required: true
+          description: "PR template"
+        - pattern: ".github/workflows/*"
+          required: false
+          description: "GitHub Actions (recommended)"
+          
+    # Git configuration for collaborative development
+    git-configuration:
+      enabled: true
+      require_gitignore: true
+      require_gitattributes: true
+      require_editorconfig: true
+      validation_rules:
+        gitignore_validation: true
+        editorconfig_validation: true
+        gitattributes_validation: true
+      gitignore_validation:
+        check_language_specific: true
+        detect_project_type: true
+        # Include common patterns for multiple languages
+        required_patterns:
+          general:
+            - ".DS_Store"
+            - "Thumbs.db"
+            - "*.swp"
+            - "*.tmp"
+            - "*.log"
+            - ".env"
+            - ".env.local"
+            - "node_modules/"
+            - "__pycache__/"
+            - "*.pyc"
+            - "vendor/"
+            - "*.exe"
+            
+    # Moderate standards for diverse contributors
+    development-standards:
+      enabled: true
+      check_commit_history: true
+      commit_history_depth: 10
+      require_conventional_commits: true
+      validation_threshold: 0.7       # 70% - accommodates new contributors
+      branch_validation: true
+      conventional_commits:
+        allowed_types:
+          - "feat"
+          - "fix"
+          - "docs"
+          - "style"
+          - "refactor"
+          - "test"
+          - "chore"
+          - "perf"
+          - "ci"
+          - "build"
+          - "revert"
+        require_scope: false
+        require_breaking_change_footer: true
+      branch_naming:
+        patterns:
+          - "^(feature|feat)/.+"
+          - "^(fix|bugfix)/.+"
+          - "^(hotfix|patch)/.+"
+          - "^(release|rel)/.+"
+          - "^(docs|documentation)/.+"
+          - "^(chore|task)/.+"
+          - "^(refactor)/.+"
+          - "^(test)/.+"
+          - "^(main|master|develop)$"
+          - "^\\d+-.+"              # Issue number prefix
+        case_sensitivity: false
+
+  # Community-friendly output
+  output:
+    format: "table"
+    verbose: true
+
+  # Balanced scoring for community projects
+  scoring:
+    pass_threshold: 0.8
+    warning_threshold: 0.6
+
+# Expected open source project structure:
+# project/
+# ├── README.md                 # Comprehensive project overview
+# ├── CONTRIBUTING.md           # Contribution guidelines
+# ├── LICENSE                   # Open source license
+# ├── CODE_OF_CONDUCT.md        # Community guidelines
+# ├── SECURITY.md               # Security policy
+# ├── CHANGELOG.md              # Release history
+# ├── .gitignore                # Language-appropriate ignores
+# ├── .gitattributes            # Git attributes
+# ├── .editorconfig             # Consistent coding style
+# ├── .github/                  # GitHub community files
+# │   ├── ISSUE_TEMPLATE/
+# │   │   ├── bug_report.md
+# │   │   └── feature_request.md
+# │   ├── PULL_REQUEST_TEMPLATE.md
+# │   └── workflows/            # CI/CD (optional but recommended)
+# │       └── ci.yml
+# ├── docs/                     # Documentation
+# │   ├── README.md
+# │   ├── usage.md
+# │   ├── api.md
+# │   ├── contributing.md
+# │   └── examples/
+# └── src/                      # Source code
