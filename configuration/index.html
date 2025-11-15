@@ -6,13 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A documented set of principles that aim to promote the ease of use of codebases across languages and frameworks">
+        <meta name="description" content="A command-line tool for validating codebase structure and development standards">
       
       
       
-        <link rel="canonical" href="https://codebaseinterface.org/configuration/">
+        <link rel="canonical" href="https://cli.codebaseinterface.org/configuration/">
       
       
+        <link rel="prev" href="../usage/">
+      
+      
+        <link rel="next" href="../agents/">
       
       
         
@@ -23,7 +27,7 @@
     
     
       
-        <title>⚙️ Configuration Mastery - Codebase Interface</title>
+        <title>Configuration - Codebase Interface CLI</title>
       
     
     
@@ -88,7 +92,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Codebase Interface" class="md-header__button md-logo" aria-label="Codebase Interface" data-md-component="logo">
+    <a href=".." title="Codebase Interface CLI" class="md-header__button md-logo" aria-label="Codebase Interface CLI" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -102,13 +106,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Codebase Interface
+            Codebase Interface CLI
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ⚙️ Configuration Mastery
+              Configuration
             
           </span>
         </div>
@@ -193,13 +197,13 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/codebase-interface/codebaseinterface" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/codebase-interface/cli" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
-    codebase-interface/codebaseinterface
+    codebase-interface/cli
   </div>
 </a>
       </div>
@@ -230,10 +234,89 @@
   
     
   
-  Welcome
+  Home
 
       </a>
     </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../usage/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Configuration
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../agents/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Validation Agents
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../examples/" class="md-tabs__link">
+          
+  
+  
+  Examples
+
+        </a>
+      </li>
+    
   
 
       
@@ -261,23 +344,23 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Codebase Interface" class="md-nav__button md-logo" aria-label="Codebase Interface" data-md-component="logo">
+    <a href=".." title="Codebase Interface CLI" class="md-nav__button md-logo" aria-label="Codebase Interface CLI" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Codebase Interface
+    Codebase Interface CLI
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/codebase-interface/codebaseinterface" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/codebase-interface/cli" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
-    codebase-interface/codebaseinterface
+    codebase-interface/cli
   </div>
 </a>
     </div>
@@ -298,7 +381,7 @@
   <span class="md-ellipsis">
     
   
-    Welcome
+    Home
   
 
     
@@ -307,6 +390,892 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Quick Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Quick Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-to-put-your-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to Put Your Config
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-complete-blueprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ The Complete Blueprint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent-configuration-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Agent Configuration Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Agent Configuration Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#essential-files-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Essential Files Agent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Essential Files Agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-readme-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom README Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-configuration-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git Configuration Agent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Git Configuration Agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#language-specific-gitignore-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Language-Specific Gitignore Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editorconfig-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EditorConfig Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#development-standards-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development Standards Agent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Development Standards Agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conventional-commits-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conventional Commits Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-naming-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branch Naming Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commit-message-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commit Message Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Output Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output-customization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Customization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-output-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON Output Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-specific-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment-Specific Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment-Specific Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimal-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimal Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strict-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strict Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#language-specific-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Language-Specific Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Language-Specific Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Go Project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodejs-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node.js Project
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Overrides
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Overrides">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temporary-disabling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temporary Disabling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-specific-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File-Specific Overrides
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migration-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Migration Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-default-to-custom-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Default to Custom Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updating-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updating Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-configuration-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Configuration Errors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Configuration Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invalid-yaml-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invalid YAML Syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unknown-configuration-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unknown Configuration Keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invalid-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invalid Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Further Reading
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/beginner.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beginner
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/basic.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/go-project.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Go Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/open-source.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/strict.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strict Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -328,7 +1297,7 @@
 
 
   
-    <a href="https://github.com/codebase-interface/codebaseinterface/edit/main/docs/configuration.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/codebase-interface/cli/edit/main/docs/configuration.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>

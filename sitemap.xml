@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://codebaseinterface.org/</loc>
+         <loc>https://cli.codebaseinterface.org/</loc>
          <lastmod>2025-11-15</lastmod>
     </url>
     <url>
-         <loc>https://codebaseinterface.org/agents/</loc>
+         <loc>https://cli.codebaseinterface.org/agents/</loc>
          <lastmod>2025-11-15</lastmod>
     </url>
     <url>
-         <loc>https://codebaseinterface.org/configuration/</loc>
+         <loc>https://cli.codebaseinterface.org/configuration/</loc>
          <lastmod>2025-11-15</lastmod>
     </url>
     <url>
-         <loc>https://codebaseinterface.org/usage/</loc>
+         <loc>https://cli.codebaseinterface.org/usage/</loc>
          <lastmod>2025-11-15</lastmod>
     </url>
     <url>
-         <loc>https://codebaseinterface.org/examples/</loc>
+         <loc>https://cli.codebaseinterface.org/examples/</loc>
          <lastmod>2025-11-15</lastmod>
     </url>
 </urlset>
