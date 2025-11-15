@@ -143,6 +143,15 @@ task install
 
 # Validate the CLI project itself
 task validate-self
+
+# Serve documentation locally
+task docs:serve
+
+# Open documentation in browser
+task docs:open
+
+# Check documentation for issues
+# Check documentation for issues\ntask docs:check\n```bash
 ```
 
 ### Architecture

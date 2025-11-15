@@ -16,7 +16,7 @@ This document defines the validation agents for the codebase interface CLI. Thes
 
 - **Test-Driven Development (TDD)** - All features must be developed with tests first
 - **Go Best Practices** - Follow Go idioms, effective Go guidelines, and community standards
-- **Documentation-Driven** - Maintain comprehensive README.md and CONTRIBUTING.md
+- **Documentation-Driven** - Maintain comprehensive README.md, CONTRIBUTING.md, and detailed docs/ directory
 - **Task Automation** - Use Taskfile for all development interactions (build, test, lint, release)
 - **Conventional Commits** - Follow [Conventional Commits](https://www.conventionalcommits.org/) specification for commit messages
 
@@ -47,6 +47,7 @@ The minimal requirements for any codebase to be considered properly structured.
 
 - **README.md** or **README.rst** - Project documentation root
 - **CONTRIBUTING.md** - Contribution guidelines
+- **docs/** directory - Comprehensive documentation structure with CLI usage guides
 
 #### Output Format
 
@@ -125,6 +126,12 @@ codebase-cli/
 │   └── ui/               # Bubble Tea TUI components
 ├── pkg/                   # Public API packages
 ├── test/                  # Test files and fixtures
+├── docs/                  # Documentation directory
+│   ├── README.md         # Documentation overview
+│   ├── usage.md          # Detailed CLI usage instructions
+│   ├── configuration.md  # Configuration reference
+│   ├── agents.md         # Agent documentation
+│   └── examples/         # Example configurations and use cases
 ├── Taskfile.yml          # Development tasks
 ├── README.md             # Project documentation
 ├── CONTRIBUTING.md       # Development guidelines
@@ -173,6 +180,15 @@ tasks:
 - **Table-Driven Tests:** Use Go's table-driven test patterns
 - **Test Coverage:** Minimum 80% code coverage
 - **Test Fixtures:** Provide sample project structures for testing
+
+### Documentation Requirements
+
+- **docs/README.md:** Overview of the documentation structure and how to navigate it
+- **docs/usage.md:** Comprehensive CLI usage guide with examples for all commands and flags
+- **docs/configuration.md:** Complete reference for .codebase-validation.yml configuration options
+- **docs/agents.md:** Detailed documentation of each validation agent, their rules, and customization options
+- **docs/examples/:** Real-world examples showing different project setups and configurations
+- **API Documentation:** Generated documentation for public packages in pkg/
 
 ---
 

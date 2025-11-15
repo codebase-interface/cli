@@ -132,6 +132,15 @@ task install
 
 # Run the CLI on itself
 task validate-self
+
+# Serve documentation locally
+task docs:serve
+
+# Open documentation in browser
+task docs:open
+
+# Check documentation for issues
+task docs:check
 ```
 
 ## Architecture Overview

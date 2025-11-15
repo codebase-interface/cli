@@ -1,0 +1,153 @@
+# Strict Standards Configuration
+# High validation standards for professional development teams
+# Requires comprehensive documentation and strict adherence to conventions
+
+validation:
+  agents:
+    # Comprehensive essential files validation
+    essential-files:
+      enabled: true
+      require_readme: true
+      require_contributing: true
+      require_docs_directory: true
+      docs_requirements:
+        require_usage_guide: true
+        require_examples: true
+        min_doc_files: 5             # Extensive documentation required
+      readme_quality:
+        min_lines: 30                # Substantial README required
+        require_description: true
+        require_installation: true
+        require_usage: true
+        check_badges: false          # Optional for internal projects
+      custom_files:
+        - pattern: "LICENSE*"
+          required: true
+          description: "License file required"
+        - pattern: "CHANGELOG*"
+          required: true
+          description: "Changelog for tracking changes"
+        - pattern: "SECURITY*"
+          required: true
+          description: "Security policy"
+        - pattern: "Taskfile.yml"
+          required: true
+          description: "Task automation required"
+          
+    # Strict Git configuration requirements
+    git-configuration:
+      enabled: true
+      require_gitignore: true
+      require_gitattributes: true     # Required for strict standards
+      require_editorconfig: true
+      validation_rules:
+        gitignore_validation: true
+        editorconfig_validation: true
+        gitattributes_validation: true
+      gitignore_validation:
+        check_language_specific: true
+        detect_project_type: true
+        required_patterns:
+          general:
+            - ".DS_Store"
+            - "Thumbs.db" 
+            - "*.swp"
+            - "*.tmp"
+            - "*.log"
+            - ".env"
+            - ".env.*"
+            - "!.env.example"
+      editorconfig_validation:
+        require_root: true
+        require_charset: true
+        require_indent_style: true
+        check_file_types: true
+        
+    # Very strict development standards
+    development-standards:
+      enabled: true
+      check_commit_history: true
+      commit_history_depth: 20        # Check more commits
+      require_conventional_commits: true
+      validation_threshold: 0.9       # 90% of commits must be conventional
+      branch_validation: true
+      conventional_commits:
+        allowed_types:
+          - "feat"
+          - "fix" 
+          - "docs"
+          - "style"
+          - "refactor"
+          - "test"
+          - "chore"
+          - "perf"
+          - "ci"
+          - "build"
+          - "revert"
+        require_scope: true           # Scope required in strict mode
+        scopes:
+          - "api"
+          - "ui"
+          - "backend"
+          - "frontend"
+          - "docs"
+          - "config"
+          - "deps"
+          - "security"
+        require_breaking_change_footer: true
+      branch_naming:
+        patterns:
+          - "^(feature|feat)/[a-z0-9-]+$"      # Strict naming
+          - "^(fix|bugfix)/[a-z0-9-]+$"
+          - "^(hotfix|patch)/[a-z0-9-]+$"
+          - "^(release|rel)/[a-z0-9.-]+$"
+          - "^(docs|documentation)/[a-z0-9-]+$"
+          - "^(chore|task)/[a-z0-9-]+$"
+          - "^(refactor)/[a-z0-9-]+$"
+          - "^(main|master|develop|staging|production)$"
+        case_sensitivity: true        # Strict case sensitivity
+        min_length: 8                # Longer branch names
+        max_length: 60
+      commit_analysis:
+        min_message_length: 15        # Longer commit messages
+        max_message_length: 72
+        check_breaking_changes: true
+        ignore_merge_commits: false   # Don't ignore merge commits
+        ignore_fixup_commits: false   # Don't ignore fixup commits
+
+  # Detailed output for strict validation
+  output:
+    format: "table"
+    verbose: true
+
+  # Very strict scoring thresholds
+  scoring:
+    pass_threshold: 0.95              # 95% score required to pass
+    warning_threshold: 0.85           # 85% for warnings
+
+# This configuration is suitable for:
+# - Enterprise environments
+# - Open source projects with high standards
+# - Teams with experienced developers
+# - Projects requiring compliance documentation
+# - Critical software with high reliability requirements
+
+# Expected project structure for strict validation:
+# project/
+# ├── README.md                 # Comprehensive (30+ lines)
+# ├── CONTRIBUTING.md           # Detailed contribution guide
+# ├── LICENSE                   # Legal requirement
+# ├── CHANGELOG.md              # Change tracking
+# ├── SECURITY.md               # Security policy
+# ├── Taskfile.yml              # Task automation
+# ├── .gitignore                # Comprehensive ignore rules
+# ├── .gitattributes            # Required file attributes
+# ├── .editorconfig             # Strict formatting rules
+# ├── docs/                     # Extensive documentation
+# │   ├── README.md             # Documentation index
+# │   ├── usage.md              # Detailed usage guide
+# │   ├── api.md                # API documentation
+# │   ├── architecture.md       # System architecture
+# │   ├── deployment.md         # Deployment guide
+# │   └── examples/             # Usage examples
+# └── src/                      # Well-organized source code

@@ -1,0 +1,133 @@
+# Go Project Configuration
+# Comprehensive configuration for Go projects with modern development practices
+# Includes Go-specific validation rules and strict quality standards
+
+validation:
+  agents:
+    # Essential files with documentation requirements
+    essential-files:
+      enabled: true
+      require_readme: true
+      require_contributing: true
+      require_docs_directory: true    # Documentation is important for Go projects
+      docs_requirements:
+        require_usage_guide: true     # docs/usage.md
+        require_examples: true        # docs/examples/
+        min_doc_files: 3             # At least 3 documentation files
+      readme_quality:
+        min_lines: 20                # Substantial README
+        require_description: true     # Project description
+        require_installation: true    # Installation instructions
+        require_usage: true          # Usage examples
+      custom_files:
+        - pattern: "LICENSE*"
+          required: true
+          description: "License file required"
+        - pattern: "go.mod"
+          required: true
+          description: "Go module file"
+        - pattern: "Taskfile.yml"
+          required: true
+          description: "Task automation file"
+          
+    # Git configuration with Go-specific patterns
+    git-configuration:
+      enabled: true
+      require_gitignore: true
+      require_gitattributes: true     # Important for Go projects
+      require_editorconfig: true
+      validation_rules:
+        gitignore_validation: true
+        editorconfig_validation: true
+        gitattributes_validation: true
+      gitignore_validation:
+        check_language_specific: true
+        detect_project_type: true
+        required_patterns:
+          go: 
+            - "*.exe"
+            - "*.test"
+            - "*.out"
+            - "vendor/"
+            - "*.log"
+            - ".env"
+            - "dist/"
+            - "bin/"
+          general:
+            - ".DS_Store"
+            - "Thumbs.db"
+            - "*.swp"
+            - "*.tmp"
+            
+    # Strict development standards for professional Go development
+    development-standards:
+      enabled: true
+      check_commit_history: true
+      commit_history_depth: 15        # Check more commits
+      require_conventional_commits: true
+      validation_threshold: 0.8       # 80% of commits must be conventional
+      branch_validation: true
+      conventional_commits:
+        allowed_types:
+          - "feat"
+          - "fix"
+          - "docs"
+          - "style"
+          - "refactor"
+          - "test"
+          - "chore"
+          - "perf"
+          - "ci"
+          - "build"
+          - "revert"
+        require_scope: false          # Scope optional but encouraged
+        require_breaking_change_footer: true
+      branch_naming:
+        patterns:
+          - "^(feature|feat)/.+"
+          - "^(fix|bugfix)/.+"
+          - "^(hotfix|patch)/.+"
+          - "^(release|rel)/.+"
+          - "^(docs|documentation)/.+"
+          - "^(chore|task)/.+"
+          - "^(main|master|develop)$"
+        case_sensitivity: false
+        min_length: 5
+        max_length: 80
+      commit_analysis:
+        min_message_length: 10
+        max_message_length: 72
+        check_breaking_changes: true
+        ignore_merge_commits: true
+        ignore_fixup_commits: true
+
+  # Output configuration for development workflow
+  output:
+    format: "table"
+    verbose: true                     # Detailed output for development
+
+  # Strict scoring for professional projects
+  scoring:
+    pass_threshold: 0.85              # 85% score needed
+    warning_threshold: 0.7            # Below 70% is concerning
+
+# Expected Go project structure:
+# project/
+# ├── go.mod                    # Go module
+# ├── go.sum                    # Go checksums
+# ├── main.go                   # Main entry point
+# ├── README.md                 # Comprehensive documentation
+# ├── CONTRIBUTING.md           # Contribution guidelines
+# ├── LICENSE                   # License file
+# ├── Taskfile.yml              # Task automation
+# ├── .gitignore                # Go-specific ignore rules
+# ├── .gitattributes            # Git attributes
+# ├── .editorconfig             # Editor configuration
+# ├── cmd/                      # Command-line tools
+# ├── internal/                 # Internal packages
+# ├── pkg/                      # Public packages
+# ├── test/                     # Test files and fixtures
+# └── docs/                     # Documentation
+#     ├── README.md             # Documentation index
+#     ├── usage.md              # Usage guide
+#     └── examples/             # Examples directory

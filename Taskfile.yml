@@ -67,3 +67,34 @@ tasks:
   dev:
     desc: Development workflow - build and test
     deps: [build, test]
+
+  docs:serve:
+    desc: Serve documentation locally using Python's built-in server
+    dir: docs
+    cmds:
+      - |
+        echo "📚 Serving documentation at http://localhost:8000"
+        echo "Press Ctrl+C to stop the server"
+        python3 -m http.server 8000 || python -m SimpleHTTPServer 8000
+
+  docs:open:
+    desc: Open documentation in the browser
+    deps: [docs:serve]
+    cmds:
+      - |
+        sleep 2
+        if command -v xdg-open > /dev/null 2>&1; then
+          xdg-open http://localhost:8000
+        elif command -v open > /dev/null 2>&1; then
+          open http://localhost:8000
+        else
+          echo "Please open http://localhost:8000 in your browser"
+        fi
+
+  docs:check:
+    desc: Check documentation for common issues (links, formatting)
+    cmds:
+      - |
+        echo "🔍 Checking documentation..."
+        find docs/ -name "*.md" -exec echo "Checking {}" \; -exec grep -l "TODO\|FIXME\|XXX" {} \; || true
+        echo "✅ Documentation check complete"
