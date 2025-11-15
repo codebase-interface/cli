@@ -1,0 +1,69 @@
+version: '3'
+
+tasks:
+  build:
+    desc: Build the CLI binary
+    cmds:
+      - go build -o bin/codebase-cli ./cmd/codebase-cli
+
+  test:
+    desc: Run all tests
+    cmds:
+      - go test ./...
+
+  test:watch:
+    desc: Run tests in watch mode
+    deps: [install-gotestsum]
+    cmds:
+      - gotestsum --watch
+
+  lint:
+    desc: Run linting
+    deps: [install-golangci-lint]
+    cmds:
+      - golangci-lint run
+
+  tidy:
+    desc: Tidy Go modules
+    cmds:
+      - go mod tidy
+
+  install:
+    desc: Install CLI locally
+    cmds:
+      - go install ./cmd/codebase-cli
+
+  clean:
+    desc: Clean build artifacts
+    cmds:
+      - rm -rf bin/
+
+  setup:
+    desc: Set up development environment
+    deps: [install-gotestsum, install-golangci-lint]
+    cmds:
+      - go mod download
+
+  install-gotestsum:
+    desc: Install gotestsum for test watching
+    cmds:
+      - go install gotest.tools/gotestsum@latest
+    status:
+      - which gotestsum
+
+  install-golangci-lint:
+    desc: Install golangci-lint for linting
+    cmds:
+      - go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+    status:
+      - which golangci-lint
+
+  validate-self:
+    desc: Run the CLI on itself for validation
+    deps: [build]
+    cmds:
+      - ./bin/codebase-cli validate
+
+  dev:
+    desc: Development workflow - build and test
+    deps: [build, test]

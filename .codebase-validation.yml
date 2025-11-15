@@ -1,0 +1,22 @@
+validation:
+  agents:
+    essential-files:
+      enabled: true
+      require_readme: true
+      require_contributing: true
+      
+    git-configuration:
+      enabled: true
+      require_gitignore: true
+      require_gitattributes: false  # Optional
+      require_editorconfig: true
+      
+    development-standards:
+      enabled: true
+      check_commit_history: true
+      commit_history_depth: 10  # Check last 10 commits
+      require_conventional_commits: true
+
+  output:
+    format: "table"  # json, table
+    verbose: false
