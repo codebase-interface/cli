@@ -1,8 +1,8 @@
-site_name: Codebase Interface
-site_description: A documented set of principles that aim to promote the ease of use of codebases across languages and frameworks
-site_url: https://codebaseinterface.org
-repo_url: https://github.com/codebase-interface/codebaseinterface
-repo_name: codebase-interface/codebaseinterface
+site_name: Codebase Interface CLI
+site_description: A command-line tool for validating codebase structure and development standards
+site_url: https://cli.codebaseinterface.org
+repo_url: https://github.com/codebase-interface/cli
+repo_name: codebase-interface/cli
 edit_uri: edit/main/docs/
 
 theme:
@@ -32,7 +32,17 @@ theme:
         name: Switch to light mode
 
 nav:
-  - Welcome: README.md
+  - Home: README.md
+  - Getting Started: usage.md
+  - Configuration: configuration.md
+  - Validation Agents: agents.md
+  - Examples:
+    - Overview: examples/README.md
+    - Beginner: examples/beginner.yml
+    - Basic: examples/basic.yml
+    - Go Project: examples/go-project.yml
+    - Open Source: examples/open-source.yml
+    - Strict Standards: examples/strict.yml
 
 plugins:
   - search

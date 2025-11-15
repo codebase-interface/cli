@@ -40,7 +40,7 @@ tasks:
 
   setup:
     desc: Set up development environment
-    deps: [install-gotestsum, install-golangci-lint]
+    deps: [install-gotestsum, install-golangci-lint, docs:install]
     cmds:
       - go mod download
 
@@ -69,27 +69,40 @@ tasks:
     deps: [build, test]
 
   docs:serve:
-    desc: Serve documentation locally using Python's built-in server
-    dir: docs
+    desc: Serve documentation using MkDocs
     cmds:
       - |
-        echo "📚 Serving documentation at http://localhost:8000"
+        echo "📚 Serving documentation with MkDocs at http://localhost:8000"
         echo "Press Ctrl+C to stop the server"
-        python3 -m http.server 8000 || python -m SimpleHTTPServer 8000
+        mkdocs serve
+
+  docs:build:
+    desc: Build static documentation site
+    cmds:
+      - mkdocs build
+      - echo "📦 Documentation built in site/ directory"
 
   docs:open:
-    desc: Open documentation in the browser
-    deps: [docs:serve]
+    desc: Serve documentation and open in browser
     cmds:
       - |
-        sleep 2
-        if command -v xdg-open > /dev/null 2>&1; then
-          xdg-open http://localhost:8000
-        elif command -v open > /dev/null 2>&1; then
-          open http://localhost:8000
-        else
-          echo "Please open http://localhost:8000 in your browser"
-        fi
+        echo "🚀 Starting MkDocs server and opening browser..."
+        (sleep 3 && (
+          if command -v xdg-open > /dev/null 2>&1; then
+            xdg-open http://localhost:8000
+          elif command -v open > /dev/null 2>&1; then
+            open http://localhost:8000
+          else
+            echo "Please open http://localhost:8000 in your browser"
+          fi
+        )) &
+        mkdocs serve
+
+  docs:install:
+    desc: Install MkDocs and required plugins
+    cmds:
+      - pip install mkdocs mkdocs-material mkdocs-git-revision-date-localized-plugin
+      - echo "📚 MkDocs installed successfully"
 
   docs:check:
     desc: Check documentation for common issues (links, formatting)
