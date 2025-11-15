@@ -1,55 +1,49 @@
-# Validation Agents Documentation
+# 🤖 Understanding Your Validation Agents
 
-Detailed documentation of each validation agent, their behavior, and customization options.
+**Ever wonder what the CLI is actually checking?** Meet your three validation assistants - each one has a specific job to make your project awesome!
 
-## Agent Architecture
+Think of these agents as your personal code quality team, each with their own specialty and expertise.
 
-Each validation agent implements the `Agent` interface and performs specific checks on a codebase. Agents return structured results with findings, scores, and status information.
+## 🧠 How Validation Works
 
-### Agent Interface
+When you run `codebase-cli validate`, each agent:
 
-```go
-type Agent interface {
-    Validate(targetPath string, cfg *config.Config) (ValidationResult, error)
-}
-```
+1. 🔍 **Scans** your project for specific files and patterns
+2. 📊 **Scores** what it finds (0.0 = needs work, 1.0 = perfect!)
+3. 📝 **Reports** exactly what's missing or could be improved
+4. ✅ **Passes or Fails** based on your configuration
 
-### Validation Result Structure
+Each agent gives you actionable feedback, not just complaints!
 
-```json
-{
-  "agent": "agent-name",
-  "status": "pass|fail|warning",
-  "score": 0.0-1.0,
-  "findings": [
-    {
-      "type": "missing|present|invalid",
-      "file": "filename",
-      "message": "Description of finding",
-      "severity": "critical|warning|info"
-    }
-  ]
-}
-```
+## 📋 Essential Files Agent - "The Welcomer"
 
-## Essential Files Agent
+**Job:** *"Make sure visitors to your project feel welcome and know what's going on!"*
 
-**Purpose**: Validates the presence and quality of fundamental project documentation files.
-**Priority**: Critical
+### What It's Looking For
 
-### Validation Logic
+This agent ensures your project has the fundamental files that make it professional and approachable:
 
-The Essential Files Agent performs the following checks:
+**🎯 README File** - Your project's front door
+- Looks for `README.md`, `README.rst`, or similar
+- This is the first thing people see!
 
-1. **README File**: Looks for `README.md`, `README.rst`, `readme.md`, or `readme.rst`
-2. **Contributing Guidelines**: Checks for `CONTRIBUTING.md`
-3. **Documentation Directory**: Validates `docs/` structure and content
+**🤝 Contributing Guidelines** - How others can help
+- Searches for `CONTRIBUTING.md`
+- Shows people how to get involved
 
-### Scoring Algorithm
+**📚 Documentation Directory** - The knowledge base
+- Validates that you have a `docs/` folder
+- Checks that it actually contains useful content
+
+### How It Scores
 
 ```
-Score = (Present Required Files) / (Total Required Files)
+Your Score = (Files Found) ÷ (Files Required)
 ```
+
+- Missing README? Major problem! 😱
+- Missing CONTRIBUTING? Room for improvement 📈
+- All files present? You're a documentation champion! 🏆
 
 - Each required file contributes equally to the final score
 - Missing critical files result in "fail" status

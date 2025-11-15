@@ -1,35 +1,54 @@
-# Configuration Reference
+# ⚙️ Configuration Mastery
 
-Complete reference for configuring the Codebase Interface CLI tool via the `.codebase-validation.yml` file.
+**Ready to make the CLI work exactly how you want?** This guide will turn you into a configuration wizard! 🧙‍♂️
 
-## Configuration File Location
+The Codebase Interface CLI is powerful out of the box, but its real magic happens when you customize it for your specific needs.
 
-The CLI looks for configuration in the following order:
+## 🎯 Quick Setup
 
-1. `.codebase-validation.yml` in the target directory (specified by `--path`)
-2. If no file is found, default configuration is used
+### Where to Put Your Config
 
-## Configuration Structure
+Just create a `.codebase-validation.yml` file in your project root. That's it! The CLI will automatically find and use it.
 
 ```yaml
+# .codebase-validation.yml - Your project's validation rules
 validation:
   agents:
     essential-files:
       enabled: true
       require_readme: true
       require_contributing: true
+      
+  output:
+    format: "table"  # Pretty output for humans
+```
+
+## 🏗️ The Complete Blueprint
+
+Here's a comprehensive configuration that shows all the possibilities:
+
+```yaml
+validation:
+  agents:
+    # 📋 Essential Files - Make sure the basics are covered
+    essential-files:
+      enabled: true
+      require_readme: true
+      require_contributing: true
       require_docs_directory: true
       
+    # ⚙️ Git Configuration - Keep your repo clean and consistent
     git-configuration:
       enabled: true
       require_gitignore: true
-      require_gitattributes: false
+      require_gitattributes: false  # Optional by default
       require_editorconfig: true
       
+    # 📜 Development Standards - Maintain quality practices
     development-standards:
       enabled: true
       check_commit_history: true
-      commit_history_depth: 10
+      commit_history_depth: 10      # How many commits to check
       require_conventional_commits: true
       branch_naming_patterns:
         - "^(feature|feat)/.+"
@@ -39,23 +58,26 @@ validation:
         - "^(chore|task)/.+"
         - "^(main|master|develop|development)$"
 
+  # 🎨 Output customization
   output:
-    format: "table"  # json, table
-    verbose: false
+    format: "table"    # "json" for machines, "table" for humans
+    verbose: false     # Set to true for more detailed output
 ```
 
-## Agent Configuration
+## 🎯 Agent Configuration Guide
 
-### Essential Files Agent
+### 📋 Essential Files Agent
 
-Validates the presence and quality of fundamental project files.
+*The foundation checker - makes sure your project has the basics covered.*
 
-| Setting | Type | Default | Description |
-|---------|------|---------|-------------|
-| `enabled` | boolean | `true` | Enable/disable the agent |
-| `require_readme` | boolean | `true` | Require README.md or README.rst |
-| `require_contributing` | boolean | `true` | Require CONTRIBUTING.md |
-| `require_docs_directory` | boolean | `true` | Require docs/ directory with usage documentation |
+**Core Settings:**
+```yaml
+essential-files:
+  enabled: true
+  require_readme: true           # README.md or README.rst
+  require_contributing: true     # CONTRIBUTING.md  
+  require_docs_directory: true   # docs/ folder with good content
+```
 
 #### Custom README Files
 

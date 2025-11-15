@@ -6,6 +6,7 @@ This directory contains real-world examples of codebase validation configuration
 
 ### Project Types
 
+- **[Beginner-Friendly](beginner.yml)** - Perfect starting point for new developers
 - **[Basic Configuration](basic.yml)** - Simple setup for small projects
 - **[Go Project](go-project.yml)** - Complete Go project configuration
 - **[Open Source](open-source.yml)** - Configuration for open source projects
