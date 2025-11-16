@@ -51,9 +51,6 @@ archives:
 checksum:
   name_template: 'checksums.txt'
 
-snapshot:
-  name_template: "{{ incpatch .Version }}-next"
-
 changelog:
   sort: asc
   use: github
@@ -83,6 +80,8 @@ brews:
     repository:
       owner: codebase-interface
       name: homebrew-cli
+      branch: main
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
     commit_author:
       name: goreleaserbot
       email: bot@goreleaser.com
@@ -94,6 +93,7 @@ brews:
       bin.install_symlink bin/"codebase-interface" => "cbi"
     test: |
       system "#{bin}/codebase-interface", "version"
+      system "#{bin}/cbi", "version"
 
 # Chocolatey package for Windows
 chocolateys:
@@ -106,14 +106,24 @@ chocolateys:
     license_url: https://github.com/codebase-interface/cli/blob/main/LICENSE
     require_license_acceptance: false
     project_source_url: https://github.com/codebase-interface/cli
-    docs_url: https://github.com/codebase-interface/cli/blob/main/README.md
+    docs_url: https://cli.codebaseinterface.org
     bug_tracker_url: https://github.com/codebase-interface/cli/issues
     tags: "cli development validation codebase"
     summary: A CLI tool for validating codebase structure and development standards
     description: |
       Codebase Interface CLI validates essential files and configurations for proper codebase setup.
       It checks for README.md, CONTRIBUTING.md, Git configuration files, and development standards.
+      
+      Features:
+      - Essential files validation (README, CONTRIBUTING, docs/)
+      - Git configuration validation (.gitignore, .editorconfig, .gitattributes)
+      - Development standards validation (conventional commits, branch naming)
+      - JSON Schema-based configuration validation
+      - Multiple output formats (table, JSON)
+      - Configuration presets for quick setup
+      - Cross-platform support (Windows, macOS, Linux)
     release_notes: "https://github.com/codebase-interface/cli/releases/tag/v{{ .Version }}"
+    api_key: "{{ .Env.CHOCOLATEY_API_KEY }}"
 
 # Docker images
 dockers:

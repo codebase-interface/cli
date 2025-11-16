@@ -29,6 +29,8 @@ Invoke-WebRequest -Uri "https://github.com/codebase-interface/cli/releases/lates
 
 ### 📦 Package Managers
 
+> **Note**: Package manager distribution requires setup of Homebrew tap and Chocolatey API keys. See [Package Manager Setup Guide](docs/package-manager-setup.md) for maintainer instructions.
+
 **Homebrew (macOS/Linux):**
 ```bash
 brew tap codebase-interface/cli

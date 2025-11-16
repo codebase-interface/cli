@@ -44,6 +44,8 @@ nav:
     - Go Project: examples/go-project.yml
     - Open Source: examples/open-source.yml
     - Strict Standards: examples/strict.yml
+  - Development:
+    - Package Manager Setup: package-manager-setup.md
 
 plugins:
   - search
