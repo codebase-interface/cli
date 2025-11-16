@@ -23,6 +23,45 @@ validation:
     format: "table"  # Pretty output for humans
 ```
 
+## 🛠️ Configuration Presets & Validation
+
+### Quick Start with Presets
+
+```bash
+# Create a basic configuration file
+cbi init-config basic
+
+# Or choose from different presets
+cbi init-config strict      # Strict validation for production codebases
+cbi init-config beginner    # Gentle validation for learning projects
+cbi init-config open-source # Perfect for public repositories
+cbi init-config go-project  # Optimized for Go projects
+```
+
+### ✅ Schema Validation
+
+**Your configuration files are protected by robust JSON Schema validation!**
+
+```bash
+# Validate your configuration file
+cbi validate-config
+
+# Validate a specific file
+cbi validate-config my-config.yml
+
+# Get the JSON schema for your editor
+cbi schema --output schema.json
+```
+
+**Schema validation catches:**
+- ✅ **Type errors** - Wrong data types (string vs boolean)
+- ✅ **Invalid values** - Out of range numbers, unknown enum options
+- ✅ **Typos** - Misspelled property names
+- ✅ **Missing required fields** - Ensures complete configuration
+- ✅ **Extra properties** - Detects unused/invalid configuration keys
+
+**Editor Integration:** Generate the schema file and configure your editor for real-time validation and IntelliSense!
+
 ## 🏗️ The Complete Blueprint
 
 Here's a comprehensive configuration that shows all the possibilities:

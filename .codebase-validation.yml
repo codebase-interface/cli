@@ -1,61 +1,71 @@
-# Beginner-Friendly Configuration
-# Perfect for developers just starting with codebase validation
-# Gentle introduction with helpful explanations and relaxed standards
+# Go Project Configuration
+# Comprehensive configuration for Go projects with modern development practices
+# Includes Go-specific validation rules and strict quality standards
 
 validation:
   agents:
-    # 📚 Essential Files - Start with the basics
     essential-files:
       enabled: true
-      require_readme: true           # Every project needs a welcoming README
-      require_contributing: false    # Optional for personal projects
-      require_docs_directory: false # Can add documentation later
-      
-    # ⚙️ Git Configuration - Keep things tidy
+      require_readme: true
+      require_contributing: true
+      require_docs_directory: true
+      docs_requirements:
+        require_usage_guide: true
+        require_examples: true
+        min_doc_files: 3
+      custom_files:
+        - pattern: "LICENSE*"
+          required: true
+          description: "License file required"
+        - pattern: "go.mod"
+          required: true
+          description: "Go module file"
+        - pattern: "Taskfile.yml"
+          required: true
+          description: "Task automation file"
+          
     git-configuration:
       enabled: true
-      require_gitignore: true        # Essential - keeps junk out of your repo
-      require_gitattributes: false   # Advanced feature, skip for now
-      require_editorconfig: false    # Nice to have, not required initially
-      
-    # 📝 Development Standards - Learn good habits gradually
+      require_gitignore: true
+      require_gitattributes: true
+      require_editorconfig: true
+      validation_rules:
+        gitignore_validation: true
+        gitattributes_validation: true
+      gitignore_validation:
+        check_language_specific: true
+        detect_project_type: true
+        required_patterns:
+          go: 
+            - "*.exe"
+            - "*.test"
+            - "*.out"
+            - "vendor/"
+            - "bin/"
+            
     development-standards:
       enabled: true
       check_commit_history: true
-      commit_history_depth: 5        # Check only recent commits
-      require_conventional_commits: false  # Learn this later
-      validation_threshold: 0.3      # Very forgiving - 30% is enough to start
+      commit_history_depth: 15
+      require_conventional_commits: true
+      validation_threshold: 0.8
+      conventional_commits:
+        allowed_types:
+          - "feat"
+          - "fix"
+          - "docs"
+          - "style"
+          - "refactor"
+          - "test"
+          - "chore"
+          - "perf"
+          - "ci"
+          - "build"
 
-  # 🎨 Output settings - Keep it simple and encouraging
   output:
-    format: "table"                  # Pretty, human-readable output
-    verbose: false                   # Don't overwhelm with details
+    format: "table"
+    verbose: true
 
-  # 📊 Scoring - Encouraging for beginners
   scoring:
-    pass_threshold: 0.5              # 50% score is passing - you've got this!
-    warning_threshold: 0.3           # Only warn if really struggling
-
-# 🎯 What this config does:
-# - Checks for a README (the most important file!)
-# - Makes sure you have a .gitignore (prevents common mistakes)
-# - Gently encourages good development practices
-# - Celebrates your progress rather than focusing on what's missing
-#
-# 🌱 As you grow:
-# - Enable CONTRIBUTING.md when you want collaborators  
-# - Add docs/ directory when your project gets complex
-# - Turn on conventional commits to learn industry standards
-# - Gradually increase thresholds as you improve
-#
-# 🎉 Perfect starting point for:
-# - Personal projects and learning exercises
-# - First-time open source contributors
-# - Teams adopting validation tools gradually
-# - Anyone who wants to start simple and grow
-
-# Expected minimal project structure:
-# my-awesome-project/
-# ├── README.md        # Tells people what your project does
-# ├── .gitignore       # Keeps build files and secrets safe
-# └── src/            # Your actual code
+    pass_threshold: 0.85
+    warning_threshold: 0.7

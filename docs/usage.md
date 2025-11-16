@@ -101,6 +101,22 @@ codebase-interface validate --agent development-standards
 
 ### 🔍 Other Handy Commands
 
+**Configuration Management:**
+```bash
+# Create a new configuration file
+codebase-interface init-config basic
+cbi init-config go-project
+
+# Validate your configuration file
+codebase-interface validate-config
+cbi validate-config
+
+# Get the JSON schema for editor support
+codebase-interface schema -o schema.json
+cbi schema
+```
+
+**Version and Help:**
 ```bash
 # Check what version you're running
 codebase-interface version
@@ -233,14 +249,36 @@ codebase-interface validate --agent development-standards
 
 ### 🎨 Custom Configuration Magic
 
-Want to customize the validation rules? Easy!
-
+**Quick Start with Templates:**
 ```bash
+# Create a configuration file from templates
+codebase-interface init-config basic      # Simple setup
+codebase-interface init-config strict     # High standards  
+codebase-interface init-config beginner   # Gentle introduction
+codebase-interface init-config open-source # OSS projects
+codebase-interface init-config go-project  # Go-specific setup
+```
+
+**Validate Your Configuration:**
+```bash
+# Make sure your config file is correct
+codebase-interface validate-config
+# or: cbi validate-config
+
 # The CLI automatically finds your .codebase-validation.yml file
 codebase-interface validate
 # or: cbi validate
+```
 
-# Pro tip: Check out our examples directory for ready-to-use configs!
+**Editor Integration:**
+```bash
+# Get the JSON schema for autocomplete and validation in your editor
+codebase-interface schema -o .vscode/codebase-validation.schema.json
+```
+
+*Then add this to the top of your `.codebase-validation.yml`:*
+```yaml
+# yaml-language-server: $schema=.vscode/codebase-validation.schema.json
 ```
 
 *Head over to our [configuration guide](configuration.md) to unlock the full power of customization.*

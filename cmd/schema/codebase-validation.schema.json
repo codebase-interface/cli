@@ -1,0 +1,419 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cli.codebaseinterface.org/schema/codebase-validation.schema.json",
+  "title": "Codebase Interface CLI Configuration",
+  "description": "Configuration schema for .codebase-validation.yml files",
+  "type": "object",
+  "properties": {
+    "validation": {
+      "type": "object",
+      "description": "Main validation configuration",
+      "properties": {
+        "agents": {
+          "type": "object",
+          "description": "Configuration for validation agents",
+          "properties": {
+            "essential-files": {
+              "$ref": "#/$defs/essential-files-agent"
+            },
+            "git-configuration": {
+              "$ref": "#/$defs/git-configuration-agent"
+            },
+            "development-standards": {
+              "$ref": "#/$defs/development-standards-agent"
+            }
+          },
+          "additionalProperties": false
+        },
+        "output": {
+          "$ref": "#/$defs/output-config"
+        },
+        "scoring": {
+          "$ref": "#/$defs/scoring-config"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "essential-files-agent": {
+      "type": "object",
+      "title": "Essential Files Agent Configuration",
+      "description": "Validates presence of fundamental project files",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Enable or disable this validation agent",
+          "default": true
+        },
+        "require_readme": {
+          "type": "boolean",
+          "description": "Require README.md or README.rst file",
+          "default": true
+        },
+        "require_contributing": {
+          "type": "boolean",
+          "description": "Require CONTRIBUTING.md file",
+          "default": true
+        },
+        "require_docs_directory": {
+          "type": "boolean",
+          "description": "Require docs/ directory with documentation",
+          "default": false
+        },
+        "docs_requirements": {
+          "type": "object",
+          "description": "Requirements for documentation directory",
+          "properties": {
+            "require_usage_guide": {
+              "type": "boolean",
+              "description": "Require docs/usage.md file",
+              "default": false
+            },
+            "require_examples": {
+              "type": "boolean", 
+              "description": "Require docs/examples/ directory",
+              "default": false
+            },
+            "min_doc_files": {
+              "type": "integer",
+              "description": "Minimum number of documentation files required",
+              "minimum": 1,
+              "default": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "readme_quality": {
+          "type": "object",
+          "description": "Quality checks for README files",
+          "properties": {
+            "min_lines": {
+              "type": "integer",
+              "description": "Minimum number of lines in README",
+              "minimum": 1,
+              "default": 10
+            },
+            "require_description": {
+              "type": "boolean",
+              "description": "Require a project description section",
+              "default": false
+            },
+            "require_installation": {
+              "type": "boolean",
+              "description": "Require installation instructions",
+              "default": false
+            },
+            "require_usage": {
+              "type": "boolean",
+              "description": "Require usage examples",
+              "default": false
+            },
+            "check_badges": {
+              "type": "boolean",
+              "description": "Check for status badges",
+              "default": false
+            }
+          },
+          "additionalProperties": false
+        },
+        "custom_files": {
+          "type": "array",
+          "description": "Additional custom files to require",
+          "items": {
+            "type": "object",
+            "properties": {
+              "pattern": {
+                "type": "string",
+                "description": "File pattern or exact filename (supports wildcards)"
+              },
+              "required": {
+                "type": "boolean",
+                "description": "Whether this file is required",
+                "default": true
+              },
+              "description": {
+                "type": "string",
+                "description": "Human-readable description of this file requirement"
+              }
+            },
+            "required": ["pattern"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "git-configuration-agent": {
+      "type": "object",
+      "title": "Git Configuration Agent",
+      "description": "Validates Git configuration files for consistent development",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Enable or disable this validation agent",
+          "default": true
+        },
+        "require_gitignore": {
+          "type": "boolean",
+          "description": "Require .gitignore file",
+          "default": true
+        },
+        "require_gitattributes": {
+          "type": "boolean",
+          "description": "Require .gitattributes file",
+          "default": false
+        },
+        "require_editorconfig": {
+          "type": "boolean",
+          "description": "Require .editorconfig file for consistent formatting",
+          "default": true
+        },
+        "validation_rules": {
+          "type": "object",
+          "description": "Advanced validation rules for Git files",
+          "properties": {
+            "gitignore_validation": {
+              "type": "boolean",
+              "description": "Enable validation of .gitignore content",
+              "default": false
+            },
+            "editorconfig_validation": {
+              "type": "boolean",
+              "description": "Enable validation of .editorconfig content",
+              "default": false
+            },
+            "gitattributes_validation": {
+              "type": "boolean",
+              "description": "Enable validation of .gitattributes content",
+              "default": false
+            }
+          },
+          "additionalProperties": false
+        },
+        "gitignore_validation": {
+          "type": "object",
+          "description": "Specific validation rules for .gitignore",
+          "properties": {
+            "check_language_specific": {
+              "type": "boolean",
+              "description": "Check for language-specific ignore patterns",
+              "default": false
+            },
+            "detect_project_type": {
+              "type": "boolean",
+              "description": "Auto-detect project type and validate appropriate patterns",
+              "default": false
+            },
+            "required_patterns": {
+              "type": "object",
+              "description": "Required ignore patterns by language/type",
+              "patternProperties": {
+                "^[a-z_]+$": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "development-standards-agent": {
+      "type": "object", 
+      "title": "Development Standards Agent",
+      "description": "Validates development workflow standards and practices",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Enable or disable this validation agent",
+          "default": true
+        },
+        "check_commit_history": {
+          "type": "boolean",
+          "description": "Check recent commit messages for standards compliance",
+          "default": true
+        },
+        "commit_history_depth": {
+          "type": "integer",
+          "description": "Number of recent commits to check",
+          "minimum": 1,
+          "maximum": 100,
+          "default": 10
+        },
+        "require_conventional_commits": {
+          "type": "boolean",
+          "description": "Require conventional commit format (feat:, fix:, etc.)",
+          "default": true
+        },
+        "validation_threshold": {
+          "type": "number",
+          "description": "Minimum percentage of commits that must comply (0.0-1.0)",
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "default": 0.8
+        },
+        "branch_validation": {
+          "type": "boolean",
+          "description": "Validate current branch name follows conventions",
+          "default": true
+        },
+        "conventional_commits": {
+          "type": "object",
+          "description": "Conventional commits configuration",
+          "properties": {
+            "allowed_types": {
+              "type": "array",
+              "description": "Allowed commit types",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z]+$"
+              },
+              "default": ["feat", "fix", "docs", "style", "refactor", "test", "chore", "perf", "ci", "build", "revert"]
+            },
+            "require_scope": {
+              "type": "boolean",
+              "description": "Require scope in commit messages feat(scope):",
+              "default": false
+            },
+            "scopes": {
+              "type": "array",
+              "description": "Allowed scopes (if require_scope is true)",
+              "items": {
+                "type": "string"
+              }
+            },
+            "require_breaking_change_footer": {
+              "type": "boolean",
+              "description": "Require BREAKING CHANGE footer for breaking changes",
+              "default": false
+            }
+          },
+          "additionalProperties": false
+        },
+        "branch_naming": {
+          "type": "object",
+          "description": "Branch naming validation rules",
+          "properties": {
+            "patterns": {
+              "type": "array",
+              "description": "Allowed branch name patterns (regex)",
+              "items": {
+                "type": "string"
+              },
+              "default": [
+                "^(feature|feat)/.+",
+                "^(fix|bugfix)/.+", 
+                "^(hotfix|patch)/.+",
+                "^(release|rel)/.+",
+                "^(docs|documentation)/.+",
+                "^(chore|task)/.+",
+                "^(main|master|develop|development)$"
+              ]
+            },
+            "case_sensitivity": {
+              "type": "boolean",
+              "description": "Whether branch names are case sensitive",
+              "default": false
+            },
+            "min_length": {
+              "type": "integer",
+              "description": "Minimum branch name length",
+              "minimum": 1,
+              "default": 3
+            },
+            "max_length": {
+              "type": "integer", 
+              "description": "Maximum branch name length",
+              "minimum": 1,
+              "default": 100
+            }
+          },
+          "additionalProperties": false
+        },
+        "commit_analysis": {
+          "type": "object",
+          "description": "Advanced commit message analysis",
+          "properties": {
+            "min_message_length": {
+              "type": "integer",
+              "description": "Minimum commit message length",
+              "minimum": 1,
+              "default": 10
+            },
+            "max_message_length": {
+              "type": "integer",
+              "description": "Maximum commit message length (first line)",
+              "minimum": 1,
+              "default": 72
+            },
+            "check_breaking_changes": {
+              "type": "boolean",
+              "description": "Check for proper breaking change indicators",
+              "default": false
+            },
+            "ignore_merge_commits": {
+              "type": "boolean",
+              "description": "Ignore merge commit messages in validation",
+              "default": true
+            },
+            "ignore_fixup_commits": {
+              "type": "boolean",
+              "description": "Ignore fixup/squash commits in validation",
+              "default": true
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "output-config": {
+      "type": "object",
+      "title": "Output Configuration",
+      "description": "Controls how validation results are displayed",
+      "properties": {
+        "format": {
+          "type": "string",
+          "description": "Output format for validation results",
+          "enum": ["table", "json"],
+          "default": "table"
+        },
+        "verbose": {
+          "type": "boolean", 
+          "description": "Enable verbose output with additional details",
+          "default": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "scoring-config": {
+      "type": "object",
+      "title": "Scoring Configuration", 
+      "description": "Thresholds for overall validation scoring",
+      "properties": {
+        "pass_threshold": {
+          "type": "number",
+          "description": "Minimum score to consider validation passed (0.0-1.0)",
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "default": 0.8
+        },
+        "warning_threshold": {
+          "type": "number",
+          "description": "Score below which warnings are shown (0.0-1.0)",
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "default": 0.6
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

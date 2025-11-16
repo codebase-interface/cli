@@ -7,8 +7,10 @@ A command line interface (CLI) for validating codebase structure and development
 - **Essential Files Validation**: Checks for README.md, CONTRIBUTING.md
 - **Git Configuration**: Validates .gitignore, .editorconfig, .gitattributes  
 - **Development Standards**: Enforces conventional commits and branch naming
+- **JSON Schema Validation**: Robust configuration file validation with detailed error reporting
+- **Configuration Presets**: Quick setup with 5 built-in templates (basic, strict, beginner, open-source, go-project)
 - **Multiple Output Formats**: Table (styled) and JSON output
-- **Configurable**: YAML configuration file support
+- **Configurable**: YAML configuration file support with schema validation
 - **Extensible**: Modular agent architecture for easy expansion
 
 ## Installation
@@ -67,6 +69,22 @@ Validates development workflow standards:
 
 ## Configuration
 
+### Quick Setup
+
+Create a configuration file with preset templates:
+
+```bash
+# Create basic configuration
+codebase-interface init-config basic
+
+# Or choose a specific template
+codebase-interface init-config go-project
+codebase-interface init-config open-source
+codebase-interface init-config strict
+```
+
+### Manual Configuration
+
 Create `.codebase-validation.yml` in your project root:
 
 ```yaml
@@ -95,6 +113,57 @@ validation:
 ```
 
 ## Commands
+
+### validate-config
+
+Validates configuration files against the JSON schema.
+
+```bash
+# Validate default configuration file
+codebase-interface validate-config
+
+# Validate specific file
+codebase-interface validate-config my-config.yml
+
+# Validate configuration in a specific directory
+codebase-interface validate-config /path/to/project
+```
+
+### schema
+
+Get the JSON schema for configuration validation and editor integration.
+
+```bash
+# Display schema to stdout
+codebase-interface schema
+
+# Save schema to file for editor integration
+codebase-interface schema --output codebase-validation.schema.json
+
+# Use shorter alias
+cbi schema -o schema.json
+```
+
+### init-config
+
+Creates a new configuration file with preset templates.
+
+```bash
+codebase-interface init-config [type]
+
+# Available types: basic, strict, beginner, open-source, go-project
+codebase-interface init-config basic
+codebase-interface init-config --force  # Overwrite existing
+```
+
+### schema
+
+Display or save the JSON schema for configuration validation.
+
+```bash
+codebase-interface schema                    # Display schema
+codebase-interface schema -o schema.json    # Save to file
+```
 
 ### validate
 
