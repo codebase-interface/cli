@@ -4,13 +4,12 @@ project_name: codebase-interface
 
 before:
   hooks:
-    - sh -c "cd cli && go mod tidy"
+    - go mod tidy
 
 builds:
   - id: codebase-interface
-    main: .
+    main: ./cmd/codebase-interface
     binary: codebase-interface
-    dir: cli
     env:
       - CGO_ENABLED=0
     flags: [ -trimpath ]
@@ -52,7 +51,7 @@ release:
   draft: false
   github:
     owner: codebase-interface        
-    name: codebase-interface          
+    name: cli          
 
 changelog:
   sort: asc
