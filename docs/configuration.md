@@ -54,6 +54,7 @@ cbi schema --output schema.json
 ```
 
 **Schema validation catches:**
+
 - ✅ **Type errors** - Wrong data types (string vs boolean)
 - ✅ **Invalid values** - Out of range numbers, unknown enum options
 - ✅ **Typos** - Misspelled property names
@@ -110,6 +111,7 @@ validation:
 *The foundation checker - makes sure your project has the basics covered.*
 
 **Core Settings:**
+
 ```yaml
 essential-files:
   enabled: true
@@ -281,7 +283,7 @@ validation:
     format: "table"
     verbose: true
     styling:
-      colors: true           # Enable colored output
+      colors: true           # Enable coloured output
       unicode_symbols: true  # Use Unicode symbols (✓, ✗, ⚠)
       show_score: true      # Show numerical scores
       show_summary: true    # Show overall summary
@@ -506,7 +508,7 @@ Invalid configuration will result in an error with specific details about the is
 When updating configuration:
 
 1. Test changes locally first
-2. Update documentation if validation behavior changes
+2. Update documentation if validation behaviour changes
 3. Communicate changes to team members
 4. Consider backward compatibility
 
@@ -540,7 +542,6 @@ Error: commit_history_depth must be a positive integer, got: -5
 
 ## Further Reading
 
-- [Agent Documentation](agents.md) - Detailed agent behavior and customization
+- [Agent Documentation](agents.md) - Detailed agent behaviour and customization
 - [Usage Guide](usage.md) - CLI usage instructions
 - [Examples](examples/) - Real-world configuration examples
-

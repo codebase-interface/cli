@@ -24,20 +24,23 @@ Each agent gives you actionable feedback, not just complaints!
 This agent ensures your project has the fundamental files that make it professional and approachable:
 
 **🎯 README File** - Your project's front door
+
 - Looks for `README.md`, `README.rst`, or similar
 - This is the first thing people see!
 
 **🤝 Contributing Guidelines** - How others can help
+
 - Searches for `CONTRIBUTING.md`
 - Shows people how to get involved
 
 **📚 Documentation Directory** - The knowledge base
+
 - Validates that you have a `docs/` folder
 - Checks that it actually contains useful content
 
 ### How It Scores
 
-```
+```txt
 Your Score = (Files Found) ÷ (Files Required)
 ```
 
@@ -134,7 +137,7 @@ validation:
 
 #### Minimal Project Structure
 
-```
+```txt
 project/
 ├── README.md
 ├── CONTRIBUTING.md
@@ -146,7 +149,7 @@ project/
 
 #### Incomplete Project Structure
 
-```
+```txt
 project/
 └── README.md
 ```
@@ -168,7 +171,7 @@ The Git Configuration Agent checks for:
 
 ### Scoring Algorithm
 
-```
+```txt
 Score = (Present Files + Weighted Optional Files) / (Total Required Files + Weighted Optional Files)
 ```
 
@@ -253,7 +256,7 @@ func detectProjectType(targetPath string) []string {
 
 #### Well-Configured Git Setup
 
-```
+```txt
 project/
 ├── .gitignore        # Language-appropriate ignore rules
 ├── .editorconfig     # Consistent code formatting
@@ -264,7 +267,7 @@ project/
 
 #### Minimal Git Setup
 
-```
+```txt
 project/
 ├── .gitignore        # Basic ignore rules
 └── .editorconfig     # Basic formatting rules
@@ -287,7 +290,7 @@ The Development Standards Agent performs these checks:
 
 ### Scoring Algorithm
 
-```
+```txt
 Score = (Valid Commits / Total Commits Checked) * 0.7 + (Branch Naming Valid ? 0.3 : 0)
 ```
 
