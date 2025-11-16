@@ -9,5 +9,11 @@
   "yaml.validate": true,
   "yaml.completion": true,
   "yaml.hover": true,
-  "yaml.format.enable": true
+  "yaml.format.enable": true,
+  "cSpell.words": [
+    "gofmt",
+    "GOPATH",
+    "Lipgloss",
+    "Taskfile"
+  ]
 }

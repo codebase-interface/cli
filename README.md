@@ -52,18 +52,24 @@ codebase-interface validate --agent essential-files
 ## Validation Agents
 
 ### 1. Essential Files Agent
+
 Validates presence of fundamental project files:
+
 - **README.md** or **README.rst** - Project documentation
 - **CONTRIBUTING.md** - Contribution guidelines
 
 ### 2. Git Configuration Agent  
+
 Validates Git configuration files:
+
 - **.gitignore** - Files to ignore in Git
 - **.editorconfig** - Consistent coding styles
 - **.gitattributes** - Git attributes (optional)
 
 ### 3. Development Standards Agent
+
 Validates development workflow standards:
+
 - **Conventional Commits** - Commit message format
 - **Branch Naming** - Branch naming conventions
 
@@ -229,7 +235,7 @@ task docs:open
 
 ### Architecture
 
-```
+```txt
 codebase-cli/
 ├── cmd/                    # Cobra CLI commands
 │   ├── root.go            # Root command

@@ -13,24 +13,28 @@ Thank you for your interest in contributing to the Codebase CLI! This document p
 ### Getting Started
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/codebase-interface/cli.git
 cd cli
 ```
 
-2. Install dependencies:
+1. Install dependencies:
+
 ```bash
 task setup
 ```
 
-3. Build the CLI:
+1. Build the CLI:
+
 ```bash
 task build
 ```
 
 **📝 Note:** The `bin/` directory is git-ignored. Built binaries are not committed to the repository - each developer builds locally.
 
-4. Run tests:
+1. Run tests:
+
 ```bash
 task test
 ```
@@ -56,7 +60,8 @@ This project follows [Conventional Commits](https://www.conventionalcommits.org/
 - `chore:` for maintenance tasks
 
 Examples:
-```
+
+```txt
 feat: add support for custom validation rules
 fix: resolve issue with git branch detection
 docs: update README with installation instructions
@@ -149,7 +154,7 @@ task docs:check
 
 The CLI follows a modular architecture:
 
-```
+```txt
 cmd/                    # CLI commands (Cobra)
 ├── root.go            # Root command
 ├── validate.go        # Validation command
