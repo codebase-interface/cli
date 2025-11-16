@@ -1,218 +1,63 @@
-# GoReleaser configuration for automated releases
 version: 2
 
 project_name: codebase-interface
 
 before:
   hooks:
-    - go mod tidy
-    - go generate ./...
+    - sh -c "cd cli && go mod tidy"
 
 builds:
   - id: codebase-interface
-    main: ./cmd/codebase-interface
+    main: .
     binary: codebase-interface
+    dir: cli
     env:
       - CGO_ENABLED=0
-    goos:
-      - linux
-      - windows
-      - darwin
-    goarch:
-      - amd64
-      - arm64
-    ignore:
-      - goos: windows
-        goarch: arm64
-    ldflags:
-      - -s -w
-      - -X main.version={{ .Version }}
-      - -X main.commit={{ .Commit }}
-      - -X main.date={{ .Date }}
-      - -X main.builtBy=goreleaser
+    flags: [ -trimpath ]
+    ldflags: [ -s -w ]
+    goos: [ linux, darwin, windows ]
+    goarch: [ amd64, arm64 ]
 
 archives:
   - id: default
-    format: tar.gz
+    builds: [ codebase-interface ]
+    name_template: "{{ .ProjectName }}-{{ .Os }}-{{ .Arch }}"
     format_overrides:
       - goos: windows
         format: zip
     files:
-      - LICENSE
-      - README.md
-      - CHANGELOG.md
-    name_template: >-
-      {{ .ProjectName }}_
-      {{- title .Os }}_
-      {{- if eq .Arch "amd64" }}x86_64
-      {{- else if eq .Arch "386" }}i386
-      {{- else }}{{ .Arch }}{{ end }}
+      - LICENSE*
+      - README*
 
-checksum:
-  name_template: 'checksums.txt'
-
-changelog:
-  sort: asc
-  use: github
-  filters:
-    exclude:
-      - '^docs:'
-      - '^test:'
-      - '^ci:'
-      - '^chore:'
-      - '^build:'
-  groups:
-    - title: Features
-      regexp: '^.*?feat(\(.+\))??!?:.+$'
-      order: 0
-    - title: 'Bug fixes'
-      regexp: '^.*?fix(\(.+\))??!?:.+$'
-      order: 1
-    - title: 'Performance improvements'
-      regexp: '^.*?perf(\(.+\))??!?:.+$'
-      order: 2
-    - title: Others
-      order: 999
-
-# Homebrew tap
 brews:
   - name: codebase-interface
     repository:
-      owner: codebase-interface
-      name: homebrew-cli
-      branch: main
-      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
+      owner: codebase-interface         # your GitHub user/org
+      name: homebrew-tap
     commit_author:
-      name: goreleaserbot
-      email: bot@goreleaser.com
+      name: GoReleaser
+      email: noreply@goreleaser.com
+    directory: Formula
+    description: "A zero-dependency JSON-driven CLI"
     homepage: "https://github.com/codebase-interface/cli"
-    description: "A CLI tool for validating codebase structure and development standards"
-    license: "MIT"
     install: |
       bin.install "codebase-interface"
-      bin.install_symlink bin/"codebase-interface" => "cbi"
     test: |
-      system "#{bin}/codebase-interface", "version"
-      system "#{bin}/cbi", "version"
+      system "#{bin}/codebase-interface", "--version"
+checksum:
+  name_template: "SHA256SUMS.txt"
+  algorithm: sha256
 
-# Chocolatey package for Windows
-chocolateys:
-  - name: codebase-interface
-    title: Codebase Interface CLI
-    authors: Codebase Interface
-    project_url: https://github.com/codebase-interface/cli
-    url_template: "https://github.com/codebase-interface/cli/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
-    copyright: 2024 Codebase Interface
-    license_url: https://github.com/codebase-interface/cli/blob/main/LICENSE
-    require_license_acceptance: false
-    project_source_url: https://github.com/codebase-interface/cli
-    docs_url: https://cli.codebaseinterface.org
-    bug_tracker_url: https://github.com/codebase-interface/cli/issues
-    tags: "cli development validation codebase"
-    summary: A CLI tool for validating codebase structure and development standards
-    description: |
-      Codebase Interface CLI validates essential files and configurations for proper codebase setup.
-      It checks for README.md, CONTRIBUTING.md, Git configuration files, and development standards.
-      
-      Features:
-      - Essential files validation (README, CONTRIBUTING, docs/)
-      - Git configuration validation (.gitignore, .editorconfig, .gitattributes)
-      - Development standards validation (conventional commits, branch naming)
-      - JSON Schema-based configuration validation
-      - Multiple output formats (table, JSON)
-      - Configuration presets for quick setup
-      - Cross-platform support (Windows, macOS, Linux)
-    release_notes: "https://github.com/codebase-interface/cli/releases/tag/v{{ .Version }}"
-    api_key: "{{ .Env.CHOCOLATEY_API_KEY }}"
-
-# Docker images
-dockers:
-  - image_templates:
-      - "ghcr.io/codebase-interface/cli:{{ .Version }}-amd64"
-      - "ghcr.io/codebase-interface/cli:latest-amd64"
-    dockerfile: Dockerfile
-    use: buildx
-    build_flag_templates:
-      - "--pull"
-      - "--platform=linux/amd64"
-      - "--label=org.opencontainers.image.title={{ .ProjectName }}"
-      - "--label=org.opencontainers.image.description=A CLI tool for validating codebase structure and development standards"
-      - "--label=org.opencontainers.image.url=https://github.com/codebase-interface/cli"
-      - "--label=org.opencontainers.image.source=https://github.com/codebase-interface/cli"
-      - "--label=org.opencontainers.image.version={{ .Version }}"
-      - "--label=org.opencontainers.image.created={{ time \"2006-01-02T15:04:05Z07:00\" }}"
-      - "--label=org.opencontainers.image.revision={{ .FullCommit }}"
-      - "--label=org.opencontainers.image.licenses=MIT"
-
-  - image_templates:
-      - "ghcr.io/codebase-interface/cli:{{ .Version }}-arm64v8"
-      - "ghcr.io/codebase-interface/cli:latest-arm64v8"
-    dockerfile: Dockerfile
-    use: buildx
-    build_flag_templates:
-      - "--pull"
-      - "--platform=linux/arm64/v8"
-      - "--label=org.opencontainers.image.title={{ .ProjectName }}"
-      - "--label=org.opencontainers.image.description=A CLI tool for validating codebase structure and development standards"
-      - "--label=org.opencontainers.image.url=https://github.com/codebase-interface/cli"
-      - "--label=org.opencontainers.image.source=https://github.com/codebase-interface/cli"
-      - "--label=org.opencontainers.image.version={{ .Version }}"
-      - "--label=org.opencontainers.image.created={{ time \"2006-01-02T15:04:05Z07:00\" }}"
-      - "--label=org.opencontainers.image.revision={{ .FullCommit }}"
-      - "--label=org.opencontainers.image.licenses=MIT"
-    goarch: arm64
-
-docker_manifests:
-  - name_template: "ghcr.io/codebase-interface/cli:{{ .Version }}"
-    image_templates:
-      - "ghcr.io/codebase-interface/cli:{{ .Version }}-amd64"
-      - "ghcr.io/codebase-interface/cli:{{ .Version }}-arm64v8"
-
-  - name_template: "ghcr.io/codebase-interface/cli:latest"
-    image_templates:
-      - "ghcr.io/codebase-interface/cli:latest-amd64"
-      - "ghcr.io/codebase-interface/cli:latest-arm64v8"
-
-# Release configuration
 release:
-  github:
-    owner: codebase-interface
-    name: cli
   draft: false
-  prerelease: auto
-  mode: replace
-  header: |
-    ## Codebase Interface CLI {{ .Version }}
-    
-    Welcome to this new release of Codebase Interface CLI! 🎉
-    
-  footer: |
-    ## Installation
-    
-    ### Pre-built Binaries
-    Download the appropriate binary for your platform from the assets below.
-    
-    ### Package Managers
-    ```bash
-    # Homebrew (macOS/Linux)
-    brew install codebase-interface/cli/codebase-interface
-    
-    # Chocolatey (Windows)
-    choco install codebase-interface
-    
-    # Go Install
-    go install github.com/codebase-interface/cli/cmd/codebase-interface@latest
-    ```
-    
-    ### Docker
-    ```bash
-    docker run --rm -v $(pwd):/workspace ghcr.io/codebase-interface/cli:{{ .Version }} validate
-    ```
-    
-    **Full Changelog**: https://github.com/codebase-interface/cli/compare/{{ .PreviousTag }}...{{ .Tag }}
+  github:
+    owner: codebase-interface        
+    name: codebase-interface          
 
-# Windows signing (optional - would require certificates)
-# signs:
-#   - artifacts: checksum
-#   - artifacts: archive
-#   - artifacts: binary
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^chore:'
+      - '^test:'
