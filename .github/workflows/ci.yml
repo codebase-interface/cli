@@ -89,13 +89,12 @@ jobs:
       run: |
         sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin
 
-    - name: Install Gosec
+    - name: Install and Run Gosec
       run: |
-        go install github.com/securecodewarrior/gosec/v2/cmd/gosec@latest
-
-    - name: Run Gosec Security Scanner
-      run: |
-        gosec -fmt sarif -out gosec.sarif ./...
+        # Install gosec from the official repository
+        go install github.com/securego/gosec/v2/cmd/gosec@latest
+        # Run gosec with continue on error
+        gosec -fmt sarif -out gosec.sarif ./... || echo "Gosec found security issues"
       continue-on-error: true
 
     - name: Upload SARIF file
