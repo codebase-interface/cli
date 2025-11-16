@@ -1,0 +1,208 @@
+# GoReleaser configuration for automated releases
+version: 2
+
+project_name: codebase-interface
+
+before:
+  hooks:
+    - go mod tidy
+    - go generate ./...
+
+builds:
+  - id: codebase-interface
+    main: ./cmd/codebase-interface
+    binary: codebase-interface
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    ignore:
+      - goos: windows
+        goarch: arm64
+    ldflags:
+      - -s -w
+      - -X main.version={{ .Version }}
+      - -X main.commit={{ .Commit }}
+      - -X main.date={{ .Date }}
+      - -X main.builtBy=goreleaser
+
+archives:
+  - id: default
+    format: tar.gz
+    format_overrides:
+      - goos: windows
+        format: zip
+    files:
+      - LICENSE
+      - README.md
+      - CHANGELOG.md
+    name_template: >-
+      {{ .ProjectName }}_
+      {{- title .Os }}_
+      {{- if eq .Arch "amd64" }}x86_64
+      {{- else if eq .Arch "386" }}i386
+      {{- else }}{{ .Arch }}{{ end }}
+
+checksum:
+  name_template: 'checksums.txt'
+
+snapshot:
+  name_template: "{{ incpatch .Version }}-next"
+
+changelog:
+  sort: asc
+  use: github
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+      - '^ci:'
+      - '^chore:'
+      - '^build:'
+  groups:
+    - title: Features
+      regexp: '^.*?feat(\(.+\))??!?:.+$'
+      order: 0
+    - title: 'Bug fixes'
+      regexp: '^.*?fix(\(.+\))??!?:.+$'
+      order: 1
+    - title: 'Performance improvements'
+      regexp: '^.*?perf(\(.+\))??!?:.+$'
+      order: 2
+    - title: Others
+      order: 999
+
+# Homebrew tap
+brews:
+  - name: codebase-interface
+    repository:
+      owner: codebase-interface
+      name: homebrew-cli
+    commit_author:
+      name: goreleaserbot
+      email: bot@goreleaser.com
+    homepage: "https://github.com/codebase-interface/cli"
+    description: "A CLI tool for validating codebase structure and development standards"
+    license: "MIT"
+    install: |
+      bin.install "codebase-interface"
+      bin.install_symlink bin/"codebase-interface" => "cbi"
+    test: |
+      system "#{bin}/codebase-interface", "version"
+
+# Chocolatey package for Windows
+chocolateys:
+  - name: codebase-interface
+    title: Codebase Interface CLI
+    authors: Codebase Interface
+    project_url: https://github.com/codebase-interface/cli
+    url_template: "https://github.com/codebase-interface/cli/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
+    copyright: 2024 Codebase Interface
+    license_url: https://github.com/codebase-interface/cli/blob/main/LICENSE
+    require_license_acceptance: false
+    project_source_url: https://github.com/codebase-interface/cli
+    docs_url: https://github.com/codebase-interface/cli/blob/main/README.md
+    bug_tracker_url: https://github.com/codebase-interface/cli/issues
+    tags: "cli development validation codebase"
+    summary: A CLI tool for validating codebase structure and development standards
+    description: |
+      Codebase Interface CLI validates essential files and configurations for proper codebase setup.
+      It checks for README.md, CONTRIBUTING.md, Git configuration files, and development standards.
+    release_notes: "https://github.com/codebase-interface/cli/releases/tag/v{{ .Version }}"
+
+# Docker images
+dockers:
+  - image_templates:
+      - "ghcr.io/codebase-interface/cli:{{ .Version }}-amd64"
+      - "ghcr.io/codebase-interface/cli:latest-amd64"
+    dockerfile: Dockerfile
+    use: buildx
+    build_flag_templates:
+      - "--pull"
+      - "--platform=linux/amd64"
+      - "--label=org.opencontainers.image.title={{ .ProjectName }}"
+      - "--label=org.opencontainers.image.description=A CLI tool for validating codebase structure and development standards"
+      - "--label=org.opencontainers.image.url=https://github.com/codebase-interface/cli"
+      - "--label=org.opencontainers.image.source=https://github.com/codebase-interface/cli"
+      - "--label=org.opencontainers.image.version={{ .Version }}"
+      - "--label=org.opencontainers.image.created={{ time \"2006-01-02T15:04:05Z07:00\" }}"
+      - "--label=org.opencontainers.image.revision={{ .FullCommit }}"
+      - "--label=org.opencontainers.image.licenses=MIT"
+
+  - image_templates:
+      - "ghcr.io/codebase-interface/cli:{{ .Version }}-arm64v8"
+      - "ghcr.io/codebase-interface/cli:latest-arm64v8"
+    dockerfile: Dockerfile
+    use: buildx
+    build_flag_templates:
+      - "--pull"
+      - "--platform=linux/arm64/v8"
+      - "--label=org.opencontainers.image.title={{ .ProjectName }}"
+      - "--label=org.opencontainers.image.description=A CLI tool for validating codebase structure and development standards"
+      - "--label=org.opencontainers.image.url=https://github.com/codebase-interface/cli"
+      - "--label=org.opencontainers.image.source=https://github.com/codebase-interface/cli"
+      - "--label=org.opencontainers.image.version={{ .Version }}"
+      - "--label=org.opencontainers.image.created={{ time \"2006-01-02T15:04:05Z07:00\" }}"
+      - "--label=org.opencontainers.image.revision={{ .FullCommit }}"
+      - "--label=org.opencontainers.image.licenses=MIT"
+    goarch: arm64
+
+docker_manifests:
+  - name_template: "ghcr.io/codebase-interface/cli:{{ .Version }}"
+    image_templates:
+      - "ghcr.io/codebase-interface/cli:{{ .Version }}-amd64"
+      - "ghcr.io/codebase-interface/cli:{{ .Version }}-arm64v8"
+
+  - name_template: "ghcr.io/codebase-interface/cli:latest"
+    image_templates:
+      - "ghcr.io/codebase-interface/cli:latest-amd64"
+      - "ghcr.io/codebase-interface/cli:latest-arm64v8"
+
+# Release configuration
+release:
+  github:
+    owner: codebase-interface
+    name: cli
+  draft: false
+  prerelease: auto
+  mode: replace
+  header: |
+    ## Codebase Interface CLI {{ .Version }}
+    
+    Welcome to this new release of Codebase Interface CLI! 🎉
+    
+  footer: |
+    ## Installation
+    
+    ### Pre-built Binaries
+    Download the appropriate binary for your platform from the assets below.
+    
+    ### Package Managers
+    ```bash
+    # Homebrew (macOS/Linux)
+    brew install codebase-interface/cli/codebase-interface
+    
+    # Chocolatey (Windows)
+    choco install codebase-interface
+    
+    # Go Install
+    go install github.com/codebase-interface/cli/cmd/codebase-interface@latest
+    ```
+    
+    ### Docker
+    ```bash
+    docker run --rm -v $(pwd):/workspace ghcr.io/codebase-interface/cli:{{ .Version }} validate
+    ```
+    
+    **Full Changelog**: https://github.com/codebase-interface/cli/compare/{{ .PreviousTag }}...{{ .Tag }}
+
+# Windows signing (optional - would require certificates)
+# signs:
+#   - artifacts: checksum
+#   - artifacts: archive
+#   - artifacts: binary

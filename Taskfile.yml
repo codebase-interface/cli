@@ -34,6 +34,32 @@ tasks:
     cmds:
       - go install ./cmd/codebase-interface
 
+  build:all:
+    desc: Build binaries for all platforms
+    cmds:
+      - mkdir -p bin/releases
+      - GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o bin/releases/codebase-interface-linux-amd64 ./cmd/codebase-interface
+      - GOOS=darwin GOARCH=amd64 go build -ldflags="-s -w" -o bin/releases/codebase-interface-darwin-amd64 ./cmd/codebase-interface
+      - GOOS=darwin GOARCH=arm64 go build -ldflags="-s -w" -o bin/releases/codebase-interface-darwin-arm64 ./cmd/codebase-interface
+      - GOOS=windows GOARCH=amd64 go build -ldflags="-s -w" -o bin/releases/codebase-interface-windows-amd64.exe ./cmd/codebase-interface
+      - echo "✅ Built binaries for all platforms in bin/releases/"
+
+  package:
+    desc: Package binaries for distribution
+    deps: [build:all]
+    cmds:
+      - cd bin/releases && tar -czf codebase-interface-linux-amd64.tar.gz codebase-interface-linux-amd64
+      - cd bin/releases && tar -czf codebase-interface-darwin-amd64.tar.gz codebase-interface-darwin-amd64
+      - cd bin/releases && tar -czf codebase-interface-darwin-arm64.tar.gz codebase-interface-darwin-arm64
+      - cd bin/releases && zip codebase-interface-windows-amd64.zip codebase-interface-windows-amd64.exe
+      - echo "📦 Packaged binaries for distribution"
+
+  release:prepare:
+    desc: Prepare release artifacts
+    deps: [test, lint, package]
+    cmds:
+      - echo "🚀 Release artifacts prepared in bin/releases/"
+
   clean:
     desc: Clean build artifacts
     cmds:
@@ -112,3 +138,34 @@ tasks:
         echo "🔍 Checking documentation..."
         find docs/ -name "*.md" -exec echo "Checking {}" \; -exec grep -l "TODO\|FIXME\|XXX" {} \; || true
         echo "✅ Documentation check complete"
+
+  docker:build:
+    desc: Build Docker image locally
+    cmds:
+      - docker build -t ghcr.io/codebase-interface/cli:dev .
+      - echo "🐳 Docker image built successfully"
+
+  docker:test:
+    desc: Test Docker image functionality
+    deps: [docker:build]
+    cmds:
+      - docker run --rm ghcr.io/codebase-interface/cli:dev --help
+      - docker run --rm -v $(pwd):/workspace ghcr.io/codebase-interface/cli:dev validate-config
+      - echo "✅ Docker image tests passed"
+
+  install:test:
+    desc: Test installation script (dry run)
+    cmds:
+      - echo "🧪 Testing installation script syntax..."
+      - bash -n install.sh
+      - echo "✅ Installation script syntax is valid"
+
+  release:check:
+    desc: Check if ready for release
+    deps: [test, lint, build:all, docker:test]
+    cmds:
+      - echo "🚀 Release readiness check complete"
+      - echo "✅ All tests passed"
+      - echo "✅ Linting passed"
+      - echo "✅ Cross-platform builds successful"
+      - echo "✅ Docker image functional"

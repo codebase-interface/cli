@@ -374,3 +374,10 @@ Expected output:
 
 Overall Score: 0.43 - FAIL
 ```
+
+## Distribution and Installation
+
+- The CLI should be available via pre-compiled binaries for major OSes (Linux, macOS, Windows)
+- Installation via Go `go install github.com/codebase-interface/cli/cmd/codebase-interface@latest`
+- Homebrew formula for macOS users
+- Winget package for Windows users

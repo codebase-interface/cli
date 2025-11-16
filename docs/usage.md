@@ -2,32 +2,24 @@
 
 **Ready to transform your project into a well-organized, professional codebase?** You're in the right place! This guide will have you validating and improving your projects in just a few minutes.
 
-## 🚀 Quick Installation
+## 📥 Installation First
 
-### Option 1: Download Pre-built Binary (Recommended)
+If you haven't installed the CLI yet, check out our **[Installation Guide](installation.md)** for multiple easy options:
 
+- **One-line installer** for Linux/macOS
+- **Package managers** (Homebrew, Chocolatey)  
+- **Docker containers** for CI/CD
+- **Pre-built binaries** for all platforms
+- **Build from source** for developers
+
+**Quick install:**
 ```bash
-# Coming soon - direct downloads for your platform
-# For now, use the source installation below
+# Linux/macOS one-liner
+curl -sSL https://raw.githubusercontent.com/codebase-interface/cli/main/install.sh | bash
+
+# Verify installation
+cbi version
 ```
-
-### Option 2: Build from Source
-
-**Prerequisites:** Go 1.21+ and Git installed on your system
-
-```bash
-# Clone and build in one go
-git clone https://github.com/codebase-interface/cli.git
-cd cli
-go build -o codebase-interface ./cmd/codebase-interface
-
-# Move to your PATH for global access
-sudo mv codebase-interface /usr/local/bin/
-```
-
-**📝 Note:** The `bin/` directory is git-ignored, so you'll need to build the binary locally.
-
-**🎉 That's it!** You now have the `codebase-interface` command available globally, or use the shorter `cbi` alias.
 
 ## ⚡ Your First Validation
 

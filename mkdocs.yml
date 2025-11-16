@@ -33,6 +33,7 @@ theme:
 
 nav:
   - Home: README.md
+  - Installation: installation.md
   - Getting Started: usage.md
   - Configuration: configuration.md
   - Validation Agents: agents.md

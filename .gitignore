@@ -23,6 +23,12 @@ profile.cov
 # Build output directory
 bin/
 
+# Release artifacts and distribution files
+dist/
+releases/
+*.tar.gz
+*.zip
+
 # Go workspace file
 go.work
 go.work.sum

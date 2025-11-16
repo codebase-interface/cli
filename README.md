@@ -15,38 +15,105 @@ A command line interface (CLI) for validating codebase structure and development
 
 ## Installation
 
-### Build from Source
+### 🚀 Quick Installation (Recommended)
+
+**Linux/macOS:**
+```bash
+curl -sSL https://raw.githubusercontent.com/codebase-interface/cli/main/install.sh | bash
+```
+
+**Windows (PowerShell):**
+```powershell
+Invoke-WebRequest -Uri "https://github.com/codebase-interface/cli/releases/latest/download/codebase-interface-windows-amd64.exe" -OutFile "codebase-interface.exe"
+```
+
+### 📦 Package Managers
+
+**Homebrew (macOS/Linux):**
+```bash
+brew tap codebase-interface/cli
+brew install codebase-interface
+```
+
+**Chocolatey (Windows):**
+```powershell
+choco install codebase-interface
+```
+
+**Go Install:**
+```bash
+go install github.com/codebase-interface/cli/cmd/codebase-interface@latest
+```
+
+### 🐳 Container
+
+**Docker:**
+```bash
+# Run validation in current directory
+docker run --rm -v $(pwd):/workspace ghcr.io/codebase-interface/cli:latest validate
+
+# Interactive mode
+docker run --rm -it -v $(pwd):/workspace ghcr.io/codebase-interface/cli:latest
+```
+
+### 📥 Pre-built Binaries
+
+Download from [GitHub Releases](https://github.com/codebase-interface/cli/releases/latest):
+
+- **Linux**: `codebase-interface-linux-amd64`
+- **macOS Intel**: `codebase-interface-darwin-amd64`  
+- **macOS Apple Silicon**: `codebase-interface-darwin-arm64`
+- **Windows**: `codebase-interface-windows-amd64.exe`
+
+### 🛠️ Build from Source
 
 ```bash
 git clone https://github.com/codebase-interface/cli.git
 cd cli
-task build
+task build  # Creates binary in bin/
+
+# Install globally
+task install  # Installs to $GOPATH/bin
 ```
-
-This creates the `codebase-interface` binary in the `bin/` directory (which is git-ignored).
-
-### Install Locally
-
-```bash
-task install
-```
-
-This installs the binary to your `$GOPATH/bin` directory.
 
 ## Quick Start
 
+### ✅ Verify Installation
+```bash
+# Check if installed correctly
+codebase-interface version
+# Or use the short alias
+cbi version
+```
+
+### 🎯 Initial Setup
+```bash
+# Create a configuration file for your project
+cbi init-config basic
+
+# Validate your configuration
+cbi validate-config
+
+# Run validation
+cbi validate
+```
+
+### 🔧 Common Usage
 ```bash
 # Validate current directory
-codebase-interface validate
+cbi validate
 
-# Validate specific path
-codebase-interface validate --path /path/to/project
+# Validate specific path  
+cbi validate --path /path/to/project
 
-# JSON output
-codebase-interface validate --output json
+# JSON output for CI/CD
+cbi validate --output json
 
 # Run specific validation agent
-codebase-interface validate --agent essential-files
+cbi validate --agent essential-files
+
+# Get help
+cbi --help
 ```
 
 ## Validation Agents

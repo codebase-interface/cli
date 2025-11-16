@@ -6,14 +6,17 @@ Welcome to the complete guide for the Codebase Interface CLI - your automated as
 
 ## 📖 What You'll Find Here
 
-- **[🎯 Getting Started](usage.md)** - Jump right in with practical examples and step-by-step guides
+- **[📥 Installation Guide](installation.md)** - Get the CLI installed quickly with multiple methods
+- **[🎯 Getting Started](usage.md)** - Jump right in with practical examples and step-by-step guides  
 - **⚙️ [Configuration Mastery](configuration.md)** - Customize validation rules to fit your project perfectly
 - **🤖 [Understanding Validators](agents.md)** - Learn what each validation agent checks and why it matters
 - **💡 [Real-World Examples](examples/)** - Copy-paste configurations for different project types
 
 ## 🏃‍♂️ Quick Start Journey
 
-**New to the CLI?** Start with our [comprehensive usage guide](usage.md) that walks you through your first validation in minutes.
+**New to the CLI?** Start with our [installation guide](installation.md) to get set up, then continue with our [comprehensive usage guide](usage.md).
+
+**Already installed?** Jump straight to the [usage guide](usage.md) that walks you through your first validation in minutes.
 
 **Want to customize?** Check out our [configuration guide](configuration.md) to tailor the tool to your specific needs.
 
@@ -21,10 +24,11 @@ Welcome to the complete guide for the Codebase Interface CLI - your automated as
 
 ## 🎯 Navigation Made Simple
 
-1. **📚 First Time Here?** → [Usage Guide](usage.md) for everything you need to know
-2. **🔧 Ready to Customize?** → [Configuration Reference](configuration.md) for advanced setup
-3. **🧠 Want to Understand More?** → [Validation Agents](agents.md) for deep insights
-4. **⚡ Need Quick Solutions?** → [Examples](examples/) for copy-paste configurations
+1. **📥 Need to Install?** → [Installation Guide](installation.md) for all installation methods
+2. **📚 First Time Here?** → [Usage Guide](usage.md) for everything you need to know  
+3. **🔧 Ready to Customize?** → [Configuration Reference](configuration.md) for advanced setup
+4. **🧠 Want to Understand More?** → [Validation Agents](agents.md) for deep insights
+5. **⚡ Need Quick Solutions?** → [Examples](examples/) for copy-paste configurations
 
 ---
 
