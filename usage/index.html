@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://cli.codebaseinterface.org/usage/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../installation/">
       
       
         <link rel="next" href="../configuration/">
@@ -245,6 +245,25 @@
   
   
   
+  
+    <li class="md-tabs__item">
+      <a href="../installation/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Installation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
     
   
   
@@ -398,6 +417,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -461,41 +507,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quick-installation" class="md-nav__link">
+  <a href="#installation-first" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🚀 Quick Installation
+        📥 Installation First
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="🚀 Quick Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#option-1-download-pre-built-binary-recommended" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Option 1: Download Pre-built Binary (Recommended)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#option-2-build-from-source" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Option 2: Build from Source
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -905,10 +923,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
@@ -926,8 +944,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1139,65 +1157,64 @@
 
 <h1 id="getting-started-with-codebase-cli">🎯 Getting Started with Codebase CLI<a class="headerlink" href="#getting-started-with-codebase-cli" title="Permanent link">&para;</a></h1>
 <p><strong>Ready to transform your project into a well-organized, professional codebase?</strong> You're in the right place! This guide will have you validating and improving your projects in just a few minutes.</p>
-<h2 id="quick-installation">🚀 Quick Installation<a class="headerlink" href="#quick-installation" title="Permanent link">&para;</a></h2>
-<h3 id="option-1-download-pre-built-binary-recommended">Option 1: Download Pre-built Binary (Recommended)<a class="headerlink" href="#option-1-download-pre-built-binary-recommended" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Coming soon - direct downloads for your platform</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># For now, use the source installation below</span>
-</code></pre></div>
-<h3 id="option-2-build-from-source">Option 2: Build from Source<a class="headerlink" href="#option-2-build-from-source" title="Permanent link">&para;</a></h3>
-<p><strong>Prerequisites:</strong> Go 1.21+ and Git installed on your system</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Clone and build in one go</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/codebase-interface/cli.git
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">cd</span><span class="w"> </span>cli
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>codebase-interface<span class="w"> </span>./cmd/codebase-interface
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># Move to your PATH for global access</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>sudo<span class="w"> </span>mv<span class="w"> </span>codebase-interface<span class="w"> </span>/usr/local/bin/
-</code></pre></div>
-<p><strong>📝 Note:</strong> The <code>bin/</code> directory is git-ignored, so you'll need to build the binary locally.</p>
-<p><strong>🎉 That's it!</strong> You now have the <code>codebase-interface</code> command available globally, or use the shorter <code>cbi</code> alias.</p>
+<h2 id="installation-first">📥 Installation First<a class="headerlink" href="#installation-first" title="Permanent link">&para;</a></h2>
+<p>If you haven't installed the CLI yet, check out our <strong><a href="../installation/">Installation Guide</a></strong> for multiple easy options:</p>
+<ul>
+<li><strong>One-line installer</strong> for Linux/macOS</li>
+<li><strong>Package managers</strong> (Homebrew, Chocolatey)  </li>
+<li><strong>Docker containers</strong> for CI/CD</li>
+<li><strong>Pre-built binaries</strong> for all platforms</li>
+<li><strong>Build from source</strong> for developers</li>
+</ul>
+<p><strong>Quick install:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Linux/macOS one-liner</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubusercontent.com/codebase-interface/cli/main/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Verify installation</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>cbi<span class="w"> </span>version
+</code></pre></div></p>
 <h2 id="your-first-validation">⚡ Your First Validation<a class="headerlink" href="#your-first-validation" title="Permanent link">&para;</a></h2>
 <p>Let's validate your first project! Navigate to any project directory and run:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>codebase-interface<span class="w"> </span>validate
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># or use the short alias</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>cbi<span class="w"> </span>validate
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>codebase-interface<span class="w"> </span>validate
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># or use the short alias</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>cbi<span class="w"> </span>validate
 </code></pre></div>
 <p><strong>What happens next?</strong> The CLI will scan your project and show you exactly what's missing or could be improved:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>✓ Essential Files Agent - PASS (Score: 1.0)
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  ✓ README.md present and well-structured
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  ✓ CONTRIBUTING.md found
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>⚠️  Git Configuration Agent - WARNING (Score: 0.7)
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  ✓ .gitignore present
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  ⚠️  .editorconfig missing (recommended for consistent formatting)
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>❌ Development Standards Agent - FAIL (Score: 0.3)
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>  ❌ Recent commits don&#39;t follow conventional format
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>  ✓ Branch naming follows conventions
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>Overall Score: 0.67 - NEEDS IMPROVEMENT
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>✓ Essential Files Agent - PASS (Score: 1.0)
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  ✓ README.md present and well-structured
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  ✓ CONTRIBUTING.md found
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>⚠️  Git Configuration Agent - WARNING (Score: 0.7)
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  ✓ .gitignore present
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  ⚠️  .editorconfig missing (recommended for consistent formatting)
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>❌ Development Standards Agent - FAIL (Score: 0.3)
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  ❌ Recent commits don&#39;t follow conventional format
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>  ✓ Branch naming follows conventions
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>Overall Score: 0.67 - NEEDS IMPROVEMENT
 </code></pre></div>
 <h2 id="command-mastery">🎮 Command Mastery<a class="headerlink" href="#command-mastery" title="Permanent link">&para;</a></h2>
 <h3 id="the-main-event-validate">The Main Event: <code>validate</code><a class="headerlink" href="#the-main-event-validate" title="Permanent link">&para;</a></h3>
 <p>This is your primary tool for checking project quality. Here's how to wield it:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Validate current directory (most common)</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>codebase-interface<span class="w"> </span>validate
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># or: cbi validate</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1"># Check a specific project</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--path<span class="w"> </span>/path/to/my-awesome-project
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># or: cbi validate --path /path/to/my-awesome-project</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c1"># Get machine-readable output</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--output<span class="w"> </span>json
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c1"># or: cbi validate --output json</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="c1"># Focus on specific areas</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--agent<span class="w"> </span>essential-files
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--agent<span class="w"> </span>git-configuration<span class="w">  </span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--agent<span class="w"> </span>development-standards
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="c1"># or use the short alias:</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="c1"># cbi validate --agent essential-files</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Validate current directory (most common)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>codebase-interface<span class="w"> </span>validate
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># or: cbi validate</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># Check a specific project</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--path<span class="w"> </span>/path/to/my-awesome-project
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># or: cbi validate --path /path/to/my-awesome-project</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1"># Get machine-readable output</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--output<span class="w"> </span>json
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1"># or: cbi validate --output json</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1"># Focus on specific areas</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--agent<span class="w"> </span>essential-files
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--agent<span class="w"> </span>git-configuration<span class="w">  </span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--agent<span class="w"> </span>development-standards
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="c1"># or use the short alias:</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="c1"># cbi validate --agent essential-files</span>
 </code></pre></div>
 <h3 id="command-options-reference">🛠️ Command Options Reference<a class="headerlink" href="#command-options-reference" title="Permanent link">&para;</a></h3>
 <table>
@@ -1244,59 +1261,59 @@
 </ul>
 <h3 id="other-handy-commands">🔍 Other Handy Commands<a class="headerlink" href="#other-handy-commands" title="Permanent link">&para;</a></h3>
 <p><strong>Configuration Management:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Create a new configuration file</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>codebase-interface<span class="w"> </span>init-config<span class="w"> </span>basic
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>cbi<span class="w"> </span>init-config<span class="w"> </span>go-project
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># Validate your configuration file</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>codebase-interface<span class="w"> </span>validate-config
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>cbi<span class="w"> </span>validate-config
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1"># Get the JSON schema for editor support</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>codebase-interface<span class="w"> </span>schema<span class="w"> </span>-o<span class="w"> </span>schema.json
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>cbi<span class="w"> </span>schema
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Create a new configuration file</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>codebase-interface<span class="w"> </span>init-config<span class="w"> </span>basic
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>cbi<span class="w"> </span>init-config<span class="w"> </span>go-project
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1"># Validate your configuration file</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>codebase-interface<span class="w"> </span>validate-config
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>cbi<span class="w"> </span>validate-config
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c1"># Get the JSON schema for editor support</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>codebase-interface<span class="w"> </span>schema<span class="w"> </span>-o<span class="w"> </span>schema.json
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>cbi<span class="w"> </span>schema
 </code></pre></div></p>
 <p><strong>Version and Help:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Check what version you&#39;re running</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>codebase-interface<span class="w"> </span>version
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># or: cbi version</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># Get help anytime</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>codebase-interface<span class="w"> </span><span class="nb">help</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>codebase-interface<span class="w"> </span><span class="nb">help</span><span class="w"> </span>validate
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c1"># or: cbi help</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Check what version you&#39;re running</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>codebase-interface<span class="w"> </span>version
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># or: cbi version</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># Get help anytime</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>codebase-interface<span class="w"> </span><span class="nb">help</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>codebase-interface<span class="w"> </span><span class="nb">help</span><span class="w"> </span>validate
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1"># or: cbi help</span>
 </code></pre></div></p>
 <h2 id="output-formats">Output Formats<a class="headerlink" href="#output-formats" title="Permanent link">&para;</a></h2>
 <h3 id="table-format-default">Table Format (Default)<a class="headerlink" href="#table-format-default" title="Permanent link">&para;</a></h3>
 <p>Provides a human-readable, styled output with colors and symbols:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>✓ Essential Files Agent - PASS (Score: 1.0)
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  ✓ README.md present
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  ✓ CONTRIBUTING.md present
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>  ✓ docs/ directory structure present
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>✗ Git Configuration Agent - FAIL (Score: 0.5)
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>  ✓ .gitignore present
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>  ✗ .editorconfig missing
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>Overall Score: 0.75 - PASS (with warnings)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>✓ Essential Files Agent - PASS (Score: 1.0)
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  ✓ README.md present
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  ✓ CONTRIBUTING.md present
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>  ✓ docs/ directory structure present
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>✗ Git Configuration Agent - FAIL (Score: 0.5)
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>  ✓ .gitignore present
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>  ✗ .editorconfig missing
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>Overall Score: 0.75 - PASS (with warnings)
 </code></pre></div>
 <h3 id="json-format">JSON Format<a class="headerlink" href="#json-format" title="Permanent link">&para;</a></h3>
 <p>Provides structured output suitable for programmatic processing:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">[</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="p">{</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">&quot;agent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;essential-files&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pass&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="nt">&quot;findings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">      </span><span class="p">{</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;present&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">        </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;README.md present&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">        </span><span class="nt">&quot;severity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;info&quot;</span>
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">      </span><span class="p">}</span>
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">    </span><span class="p">]</span>
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">[</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">&quot;agent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;essential-files&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pass&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="nt">&quot;findings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">      </span><span class="p">{</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;present&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">        </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;README.md present&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">        </span><span class="nt">&quot;severity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;info&quot;</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">    </span><span class="p">]</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="p">]</span>
 </code></pre></div>
 <h2 id="understanding-exit-codes">🚦 Understanding Exit Codes<a class="headerlink" href="#understanding-exit-codes" title="Permanent link">&para;</a></h2>
 <p>When the CLI finishes, it tells you exactly how things went:</p>
@@ -1308,83 +1325,83 @@
 <p><em>This is especially useful for automation and CI/CD pipelines!</em></p>
 <h2 id="real-world-examples">🎆 Real-World Examples<a class="headerlink" href="#real-world-examples" title="Permanent link">&para;</a></h2>
 <h3 id="your-first-success-story">🎉 Your First Success Story<a class="headerlink" href="#your-first-success-story" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Navigate to your project</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">cd</span><span class="w"> </span>/path/to/my-awesome-project
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Run the magic</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>codebase-cli<span class="w"> </span>validate
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># Celebrate when you see this:</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>✓<span class="w"> </span>Essential<span class="w"> </span>Files<span class="w"> </span>Agent<span class="w"> </span>-<span class="w"> </span>PASS<span class="w"> </span><span class="o">(</span>Score:<span class="w"> </span><span class="m">1</span>.0<span class="o">)</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">  </span>✓<span class="w"> </span>README.md<span class="w"> </span>present<span class="w"> </span>and<span class="w"> </span>informative
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">  </span>✓<span class="w"> </span>CONTRIBUTING.md<span class="w"> </span>guides<span class="w"> </span>contributors<span class="w"> </span>well
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>✓<span class="w"> </span>Git<span class="w"> </span>Configuration<span class="w"> </span>Agent<span class="w"> </span>-<span class="w"> </span>PASS<span class="w"> </span><span class="o">(</span>Score:<span class="w"> </span><span class="m">1</span>.0<span class="o">)</span>
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">  </span>✓<span class="w"> </span>.gitignore<span class="w"> </span>keeps<span class="w"> </span>unwanted<span class="w"> </span>files<span class="w"> </span>out
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">  </span>✓<span class="w"> </span>.editorconfig<span class="w"> </span>ensures<span class="w"> </span>consistent<span class="w"> </span>formatting
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>✓<span class="w"> </span>Development<span class="w"> </span>Standards<span class="w"> </span>Agent<span class="w"> </span>-<span class="w"> </span>PASS<span class="w"> </span><span class="o">(</span>Score:<span class="w"> </span><span class="m">1</span>.0<span class="o">)</span>
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">  </span>✓<span class="w"> </span>Recent<span class="w"> </span>commits<span class="w"> </span>follow<span class="w"> </span>conventional<span class="w"> </span>format
-<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">  </span>✓<span class="w"> </span>Branch<span class="w"> </span>naming<span class="w"> </span>follows<span class="w"> </span>conventions:<span class="w"> </span>feature/amazing-feature
-<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
-<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>🎆<span class="w"> </span>Overall<span class="w"> </span>Score:<span class="w"> </span><span class="m">1</span>.00<span class="w"> </span>-<span class="w"> </span>EXCELLENT<span class="w"> </span>PROJECT!
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Navigate to your project</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">cd</span><span class="w"> </span>/path/to/my-awesome-project
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># Run the magic</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>codebase-cli<span class="w"> </span>validate
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># Celebrate when you see this:</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>✓<span class="w"> </span>Essential<span class="w"> </span>Files<span class="w"> </span>Agent<span class="w"> </span>-<span class="w"> </span>PASS<span class="w"> </span><span class="o">(</span>Score:<span class="w"> </span><span class="m">1</span>.0<span class="o">)</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span>✓<span class="w"> </span>README.md<span class="w"> </span>present<span class="w"> </span>and<span class="w"> </span>informative
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">  </span>✓<span class="w"> </span>CONTRIBUTING.md<span class="w"> </span>guides<span class="w"> </span>contributors<span class="w"> </span>well
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>✓<span class="w"> </span>Git<span class="w"> </span>Configuration<span class="w"> </span>Agent<span class="w"> </span>-<span class="w"> </span>PASS<span class="w"> </span><span class="o">(</span>Score:<span class="w"> </span><span class="m">1</span>.0<span class="o">)</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">  </span>✓<span class="w"> </span>.gitignore<span class="w"> </span>keeps<span class="w"> </span>unwanted<span class="w"> </span>files<span class="w"> </span>out
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">  </span>✓<span class="w"> </span>.editorconfig<span class="w"> </span>ensures<span class="w"> </span>consistent<span class="w"> </span>formatting
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>✓<span class="w"> </span>Development<span class="w"> </span>Standards<span class="w"> </span>Agent<span class="w"> </span>-<span class="w"> </span>PASS<span class="w"> </span><span class="o">(</span>Score:<span class="w"> </span><span class="m">1</span>.0<span class="o">)</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">  </span>✓<span class="w"> </span>Recent<span class="w"> </span>commits<span class="w"> </span>follow<span class="w"> </span>conventional<span class="w"> </span>format
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">  </span>✓<span class="w"> </span>Branch<span class="w"> </span>naming<span class="w"> </span>follows<span class="w"> </span>conventions:<span class="w"> </span>feature/amazing-feature
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>🎆<span class="w"> </span>Overall<span class="w"> </span>Score:<span class="w"> </span><span class="m">1</span>.00<span class="w"> </span>-<span class="w"> </span>EXCELLENT<span class="w"> </span>PROJECT!
 </code></pre></div>
 <h3 id="automation-made-simple">🤖 Automation Made Simple<a class="headerlink" href="#automation-made-simple" title="Permanent link">&para;</a></h3>
 <p>Integrate with your CI/CD pipeline effortlessly:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Generate a detailed JSON report</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--output<span class="w"> </span>json<span class="w"> </span>&gt;<span class="w"> </span>validation-report.json
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># or: cbi validate --output json &gt; validation-report.json</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="c1"># Simple CI/CD script that works everywhere</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="c1">#!/bin/bash</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="k">if</span><span class="w"> </span>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--output<span class="w"> </span>json<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;✅ Your codebase rocks! Validation passed&quot;</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="k">else</span>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;⚠️  Time for some improvements!&quot;</span>
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">    </span>codebase-interface<span class="w"> </span>validate
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="k">fi</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Generate a detailed JSON report</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--output<span class="w"> </span>json<span class="w"> </span>&gt;<span class="w"> </span>validation-report.json
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># or: cbi validate --output json &gt; validation-report.json</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c1"># Simple CI/CD script that works everywhere</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="c1">#!/bin/bash</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="k">if</span><span class="w"> </span>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--output<span class="w"> </span>json<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;✅ Your codebase rocks! Validation passed&quot;</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="k">else</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;⚠️  Time for some improvements!&quot;</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">    </span>codebase-interface<span class="w"> </span>validate
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="k">fi</span>
 </code></pre></div>
 <h3 id="laser-focused-validation">🎯 Laser-Focused Validation<a class="headerlink" href="#laser-focused-validation" title="Permanent link">&para;</a></h3>
 <p>Sometimes you want to check just one thing:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Just the essentials</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--agent<span class="w"> </span>essential-files
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1"># or: cbi validate --agent essential-files</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="c1"># Only Git setup</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--agent<span class="w"> </span>git-configuration
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="c1"># or: cbi validate --agent git-configuration</span>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="c1"># Just development practices</span>
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--agent<span class="w"> </span>development-standards
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="c1"># or: cbi validate --agent development-standards</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Just the essentials</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--agent<span class="w"> </span>essential-files
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># or: cbi validate --agent essential-files</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="c1"># Only Git setup</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--agent<span class="w"> </span>git-configuration
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1"># or: cbi validate --agent git-configuration</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="c1"># Just development practices</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--agent<span class="w"> </span>development-standards
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="c1"># or: cbi validate --agent development-standards</span>
 </code></pre></div>
 <p><em>Perfect for when you're working on specific improvements!</em></p>
 <h3 id="custom-configuration-magic">🎨 Custom Configuration Magic<a class="headerlink" href="#custom-configuration-magic" title="Permanent link">&para;</a></h3>
 <p><strong>Quick Start with Templates:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Create a configuration file from templates</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>codebase-interface<span class="w"> </span>init-config<span class="w"> </span>basic<span class="w">      </span><span class="c1"># Simple setup</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>codebase-interface<span class="w"> </span>init-config<span class="w"> </span>strict<span class="w">     </span><span class="c1"># High standards  </span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>codebase-interface<span class="w"> </span>init-config<span class="w"> </span>beginner<span class="w">   </span><span class="c1"># Gentle introduction</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>codebase-interface<span class="w"> </span>init-config<span class="w"> </span>open-source<span class="w"> </span><span class="c1"># OSS projects</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>codebase-interface<span class="w"> </span>init-config<span class="w"> </span>go-project<span class="w">  </span><span class="c1"># Go-specific setup</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Create a configuration file from templates</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>codebase-interface<span class="w"> </span>init-config<span class="w"> </span>basic<span class="w">      </span><span class="c1"># Simple setup</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>codebase-interface<span class="w"> </span>init-config<span class="w"> </span>strict<span class="w">     </span><span class="c1"># High standards  </span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>codebase-interface<span class="w"> </span>init-config<span class="w"> </span>beginner<span class="w">   </span><span class="c1"># Gentle introduction</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>codebase-interface<span class="w"> </span>init-config<span class="w"> </span>open-source<span class="w"> </span><span class="c1"># OSS projects</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>codebase-interface<span class="w"> </span>init-config<span class="w"> </span>go-project<span class="w">  </span><span class="c1"># Go-specific setup</span>
 </code></pre></div></p>
 <p><strong>Validate Your Configuration:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Make sure your config file is correct</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>codebase-interface<span class="w"> </span>validate-config
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="c1"># or: cbi validate-config</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="c1"># The CLI automatically finds your .codebase-validation.yml file</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>codebase-interface<span class="w"> </span>validate
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="c1"># or: cbi validate</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Make sure your config file is correct</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>codebase-interface<span class="w"> </span>validate-config
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="c1"># or: cbi validate-config</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="c1"># The CLI automatically finds your .codebase-validation.yml file</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>codebase-interface<span class="w"> </span>validate
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="c1"># or: cbi validate</span>
 </code></pre></div></p>
 <p><strong>Editor Integration:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Get the JSON schema for autocomplete and validation in your editor</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>codebase-interface<span class="w"> </span>schema<span class="w"> </span>-o<span class="w"> </span>.vscode/codebase-validation.schema.json
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Get the JSON schema for autocomplete and validation in your editor</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>codebase-interface<span class="w"> </span>schema<span class="w"> </span>-o<span class="w"> </span>.vscode/codebase-validation.schema.json
 </code></pre></div></p>
 <p><em>Then add this to the top of your <code>.codebase-validation.yml</code>:</em>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># yaml-language-server: $schema=.vscode/codebase-validation.schema.json</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># yaml-language-server: $schema=.vscode/codebase-validation.schema.json</span>
 </code></pre></div></p>
 <p><em>Head over to our <a href="../configuration/">configuration guide</a> to unlock the full power of customization.</em></p>
 <h2 id="troubleshooting-guide">🔧 Troubleshooting Guide<a class="headerlink" href="#troubleshooting-guide" title="Permanent link">&para;</a></h2>
@@ -1406,83 +1423,83 @@
 <p>No <code>.codebase-validation.yml</code>? No problem! The CLI works great with sensible defaults. But if you want to customize, check out our <a href="../configuration/">configuration guide</a> and <a href="examples/">examples</a>.</p>
 <h3 id="getting-more-details">🔍 Getting More Details<a class="headerlink" href="#getting-more-details" title="Permanent link">&para;</a></h3>
 <p>Need to see exactly what's happening?</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Get all the details in JSON format</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--output<span class="w"> </span>json
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="c1"># or: cbi validate --output json</span>
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="c1"># Pretty-print with jq if you have it installed</span>
-<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--output<span class="w"> </span>json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;.&#39;</span>
-<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="c1"># or: cbi validate --output json | jq &#39;.&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Get all the details in JSON format</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--output<span class="w"> </span>json
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="c1"># or: cbi validate --output json</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="c1"># Pretty-print with jq if you have it installed</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--output<span class="w"> </span>json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;.&#39;</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="c1"># or: cbi validate --output json | jq &#39;.&#39;</span>
 </code></pre></div>
 <h2 id="power-user-features">🚀 Power User Features<a class="headerlink" href="#power-user-features" title="Permanent link">&para;</a></h2>
 <h3 id="pre-commit-hooks-never-break-the-build-again">🎯 Pre-commit Hooks (Never Break the Build Again!)<a class="headerlink" href="#pre-commit-hooks-never-break-the-build-again" title="Permanent link">&para;</a></h3>
 <p>Add this to your <code>.git/hooks/pre-commit</code> file:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="ch">#!/bin/bash</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;🔍 Running codebase validation...&quot;</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>codebase-interface<span class="w"> </span>validate<span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;❌ Hold up! Fix these issues before committing.&quot;</span>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="k">fi</span>
-<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;✅ All good! Committing...&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;🔍 Running codebase validation...&quot;</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>codebase-interface<span class="w"> </span>validate<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;❌ Hold up! Fix these issues before committing.&quot;</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="k">fi</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;✅ All good! Committing...&quot;</span>
 </code></pre></div>
 <p><em>Make it executable: <code>chmod +x .git/hooks/pre-commit</code></em></p>
 <h3 id="ide-integration-code-while-you-validate">💻 IDE Integration (Code While You Validate)<a class="headerlink" href="#ide-integration-code-while-you-validate" title="Permanent link">&para;</a></h3>
 <p>Most IDEs can run external tools. Set yours up with:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--path<span class="w"> </span><span class="si">${</span><span class="nv">PROJECT_DIR</span><span class="si">}</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="c1"># or: cbi validate --path ${PROJECT_DIR}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--path<span class="w"> </span><span class="si">${</span><span class="nv">PROJECT_DIR</span><span class="si">}</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="c1"># or: cbi validate --path ${PROJECT_DIR}</span>
 </code></pre></div>
 <p><em>Works great with VS Code tasks, IntelliJ run configurations, and more!</em></p>
 <h3 id="github-actions-automate-all-the-things">🔄 GitHub Actions (Automate All The Things)<a class="headerlink" href="#github-actions-automate-all-the-things" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;🤖</span><span class="nv"> </span><span class="s">Validate</span><span class="nv"> </span><span class="s">Codebase&quot;</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nt">on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pull_request</span><span class="p p-Indicator">]</span>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="nt">jobs</span><span class="p">:</span>
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">  </span><span class="nt">validate</span><span class="p">:</span>
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;🔍</span><span class="nv"> </span><span class="s">Check</span><span class="nv"> </span><span class="s">Project</span><span class="nv"> </span><span class="s">Quality&quot;</span>
-<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
-<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
-<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;📥</span><span class="nv"> </span><span class="s">Get</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">code&quot;</span>
-<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
-<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>
-<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;🔧</span><span class="nv"> </span><span class="s">Setup</span><span class="nv"> </span><span class="s">Go&quot;</span>
-<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-go@v4</span>
-<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
-<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="w">          </span><span class="nt">go-version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;1.21&#39;</span>
-<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>
-<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;📎</span><span class="nv"> </span><span class="s">Build</span><span class="nv"> </span><span class="s">CLI&quot;</span>
-<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go build -o codebase-interface ./cmd/codebase-interface</span>
-<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>
-<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;✨</span><span class="nv"> </span><span class="s">Validate</span><span class="nv"> </span><span class="s">Codebase&quot;</span>
-<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./codebase-interface validate</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;🤖</span><span class="nv"> </span><span class="s">Validate</span><span class="nv"> </span><span class="s">Codebase&quot;</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nt">on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pull_request</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="nt">jobs</span><span class="p">:</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">  </span><span class="nt">validate</span><span class="p">:</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;🔍</span><span class="nv"> </span><span class="s">Check</span><span class="nv"> </span><span class="s">Project</span><span class="nv"> </span><span class="s">Quality&quot;</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;📥</span><span class="nv"> </span><span class="s">Get</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">code&quot;</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;🔧</span><span class="nv"> </span><span class="s">Setup</span><span class="nv"> </span><span class="s">Go&quot;</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-go@v4</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="w">          </span><span class="nt">go-version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;1.21&#39;</span>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;📎</span><span class="nv"> </span><span class="s">Build</span><span class="nv"> </span><span class="s">CLI&quot;</span>
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go build -o codebase-interface ./cmd/codebase-interface</span>
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>
+<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;✨</span><span class="nv"> </span><span class="s">Validate</span><span class="nv"> </span><span class="s">Codebase&quot;</span>
+<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./codebase-interface validate</span>
 </code></pre></div>
 <h2 id="advanced-techniques">🎮 Advanced Techniques<a class="headerlink" href="#advanced-techniques" title="Permanent link">&para;</a></h2>
 <h3 id="multi-project-validation">📋 Multi-Project Validation<a class="headerlink" href="#multi-project-validation" title="Permanent link">&para;</a></h3>
 <p>Got multiple projects? Validate them all:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># Check all your awesome projects</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="k">for</span><span class="w"> </span>project<span class="w"> </span><span class="k">in</span><span class="w"> </span>frontend<span class="w"> </span>backend<span class="w"> </span>mobile<span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;🔍 Validating </span><span class="nv">$project</span><span class="s2">...&quot;</span>
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--path<span class="w"> </span><span class="s2">&quot;./</span><span class="nv">$project</span><span class="s2">&quot;</span>
-<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">    </span><span class="c1"># or: cbi validate --path &quot;./$project&quot;</span>
-<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="k">done</span>
-<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
-<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="c1"># Or check different environments</span>
-<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--path<span class="w"> </span>./development
-<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--path<span class="w"> </span>./staging
-<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--path<span class="w"> </span>./production
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># Check all your awesome projects</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="k">for</span><span class="w"> </span>project<span class="w"> </span><span class="k">in</span><span class="w"> </span>frontend<span class="w"> </span>backend<span class="w"> </span>mobile<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;🔍 Validating </span><span class="nv">$project</span><span class="s2">...&quot;</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--path<span class="w"> </span><span class="s2">&quot;./</span><span class="nv">$project</span><span class="s2">&quot;</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">    </span><span class="c1"># or: cbi validate --path &quot;./$project&quot;</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="k">done</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="c1"># Or check different environments</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--path<span class="w"> </span>./development
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--path<span class="w"> </span>./staging
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--path<span class="w"> </span>./production
 </code></pre></div>
 <h3 id="automated-reporting-analytics">📈 Automated Reporting &amp; Analytics<a class="headerlink" href="#automated-reporting-analytics" title="Permanent link">&para;</a></h3>
 <p>Track your project quality over time:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="ch">#!/bin/bash</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="c1"># Create timestamped quality reports</span>
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nv">timestamp</span><span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>+<span class="s2">&quot;%Y-%m-%d_%H-%M-%S&quot;</span><span class="k">)</span>
-<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="nv">report_file</span><span class="o">=</span><span class="s2">&quot;quality-report-</span><span class="si">${</span><span class="nv">timestamp</span><span class="si">}</span><span class="s2">.json&quot;</span>
-<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>
-<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--output<span class="w"> </span>json<span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;reports/</span><span class="nv">$report_file</span><span class="s2">&quot;</span>
-<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="c1"># or: cbi validate --output json &gt; &quot;reports/$report_file&quot;</span>
-<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;📈 Quality report saved: </span><span class="nv">$report_file</span><span class="s2">&quot;</span>
-<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>
-<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="c1"># Send to your monitoring system</span>
-<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="c1"># curl -X POST &quot;https://your-api.com/quality-reports&quot; -d @&quot;reports/$report_file&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="c1"># Create timestamped quality reports</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nv">timestamp</span><span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>+<span class="s2">&quot;%Y-%m-%d_%H-%M-%S&quot;</span><span class="k">)</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="nv">report_file</span><span class="o">=</span><span class="s2">&quot;quality-report-</span><span class="si">${</span><span class="nv">timestamp</span><span class="si">}</span><span class="s2">.json&quot;</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>codebase-interface<span class="w"> </span>validate<span class="w"> </span>--output<span class="w"> </span>json<span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;reports/</span><span class="nv">$report_file</span><span class="s2">&quot;</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="c1"># or: cbi validate --output json &gt; &quot;reports/$report_file&quot;</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;📈 Quality report saved: </span><span class="nv">$report_file</span><span class="s2">&quot;</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="c1"># Send to your monitoring system</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="c1"># curl -X POST &quot;https://your-api.com/quality-reports&quot; -d @&quot;reports/$report_file&quot;</span>
 </code></pre></div>
 <hr />
 <h2 id="whats-next">🎆 What's Next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
@@ -1511,7 +1528,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 16, 2025 11:37:11 UTC">November 16, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 16, 2025 16:26:15 UTC">November 16, 2025</span>
   </span>
 
     
