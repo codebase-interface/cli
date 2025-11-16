@@ -1,0 +1,13 @@
+{
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/codebase-interface/cli/refs/heads/main/cmd/schema/codebase-validation.schema.json": [
+      ".codebase-validation.yml",
+      "**/codebase-validation.yml",
+      "**/.codebase-validation.yml"
+    ]
+  },
+  "yaml.validate": true,
+  "yaml.completion": true,
+  "yaml.hover": true,
+  "yaml.format.enable": true
+}

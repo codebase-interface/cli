@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/codebase-interface/cli/refs/heads/main/cmd/schema/codebase-validation.schema.json
 # Go Project Configuration
 # Comprehensive configuration for Go projects with modern development practices
 # Includes Go-specific validation rules and strict quality standards
@@ -63,7 +64,7 @@ validation:
           - "build"
 
   output:
-    format: "table"
+    format: "table" 
     verbose: true
 
   scoring:

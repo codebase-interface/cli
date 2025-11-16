@@ -9,6 +9,7 @@ This document defines the validation agents for the codebase interface CLI. Thes
 - **Language:** Go (latest stable version)
 - **CLI Framework:** [Cobra](https://github.com/spf13/cobra) - Standard Go CLI framework with command structure and flags
 - **TUI Framework:** [Bubble Tea](https://github.com/charmbracelet/bubbletea) - Modern terminal UI for interactive validation reports
+- **Schema Validation:** [JSON Schema](https://json-schema.org/draft/2020-12/schema) with [gojsonschema](https://github.com/xeipuuv/gojsonschema) - Comprehensive configuration validation
 - **Task Runner:** [Taskfile](https://taskfile.dev/) - Task runner for development workflows
 - **Testing:** Test-driven development (TDD) approach with Go's built-in testing framework
 
@@ -16,7 +17,7 @@ This document defines the validation agents for the codebase interface CLI. Thes
 
 - **Test-Driven Development (TDD)** - All features must be developed with tests first
 - **Go Best Practices** - Follow Go idioms, effective Go guidelines, and community standards
-- **Documentation-Driven** - Maintain comprehensive README.md, CONTRIBUTING.md, and detailed docs/ directory
+- **Documentation-Driven** - Maintain comprehensive README.md, CONTRIBUTING.md, AGENTS.md and detailed docs/ directory
 - **Task Automation** - Use Taskfile for all development interactions (build, test, lint, release)
 - **Conventional Commits** - Follow [Conventional Commits](https://www.conventionalcommits.org/) specification for commit messages
 
@@ -24,7 +25,9 @@ This document defines the validation agents for the codebase interface CLI. Thes
 
 - Modular agent system for extensibility
 - Clean separation between validation logic and UI presentation
-- Configuration-driven validation rules
+- Configuration-driven validation rules with JSON Schema validation
+- Embedded schema system for offline validation and editor integration
+- Configuration presets and templates for quick setup
 - Structured JSON output for programmatic use
 - Interactive TUI for human-friendly reports
 
@@ -114,25 +117,35 @@ The minimal requirements for any codebase to be considered properly structured.
 ### Project Structure
 
 ```text
-codebase-cli/
+codebase-interface-cli/
 ├── cmd/                    # Cobra CLI commands
-│   ├── root.go            # Root command
+│   ├── codebase-interface/ # Main CLI entry point
+│   ├── root.go            # Root command with alias support
 │   ├── validate.go        # Validation command
+│   ├── validate-config.go # Configuration validation command
+│   ├── init-config.go     # Configuration preset generator
+│   ├── schema.go          # Schema export command
+│   ├── schema/            # Embedded JSON schema
+│   │   └── codebase-validation.schema.json
 │   └── version.go         # Version command
 ├── internal/              # Internal packages
 │   ├── agents/           # Validation agents
-│   ├── config/           # Configuration handling
+│   ├── config/           # Configuration handling with schema validation
 │   ├── output/           # Output formatters
 │   └── ui/               # Bubble Tea TUI components
 ├── pkg/                   # Public API packages
 ├── test/                  # Test files and fixtures
-├── docs/                  # Documentation directory
+├── docs/                  # Documentation directory (MkDocs)
 │   ├── README.md         # Documentation overview
 │   ├── usage.md          # Detailed CLI usage instructions
-│   ├── configuration.md  # Configuration reference
+│   ├── configuration.md  # Configuration reference with schema docs
 │   ├── agents.md         # Agent documentation
 │   └── examples/         # Example configurations and use cases
-├── Taskfile.yml          # Development tasks
+├── .vscode/               # VS Code workspace settings
+│   └── settings.json     # YAML schema integration
+├── bin/                   # Compiled binaries (git-ignored)
+├── Taskfile.yml          # Development tasks with MkDocs integration
+├── mkdocs.yml            # Documentation site configuration
 ├── README.md             # Project documentation
 ├── CONTRIBUTING.md       # Development guidelines
 └── go.mod                # Go module definition
@@ -145,7 +158,7 @@ tasks:
   build:
     desc: Build the CLI binary
     cmds:
-      - go build -o bin/codebase-cli ./cmd/codebase-cli
+      - go build -o bin/codebase-interface ./cmd/codebase-interface
 
   test:
     desc: Run all tests
@@ -162,6 +175,22 @@ tasks:
     cmds:
       - golangci-lint run
 
+  validate-schema:
+    desc: Validate JSON schema and test configuration validation
+    cmds:
+      - ./bin/codebase-interface validate-config
+      - ./bin/codebase-interface schema --output /tmp/schema-test.json
+
+  docs:serve:
+    desc: Serve documentation locally
+    cmds:
+      - mkdocs serve
+
+  docs:build:
+    desc: Build documentation site
+    cmds:
+      - mkdocs build
+
   tidy:
     desc: Tidy Go modules
     cmds:
@@ -170,7 +199,7 @@ tasks:
   install:
     desc: Install CLI locally
     cmds:
-      - go install ./cmd/codebase-cli
+      - go install ./cmd/codebase-interface
 ```
 
 ### Test-Driven Development Requirements
@@ -198,16 +227,26 @@ tasks:
 
 ```bash
 # Validate all essential files
-codebase-cli validate
+codebase-interface validate
 
 # Validate specific agent
-codebase-cli validate --agent essential-files
-codebase-cli validate --agent git-configuration
-codebase-cli validate --agent development-standards
+codebase-interface validate --agent essential-files
+codebase-interface validate --agent git-configuration
+codebase-interface validate --agent development-standards
 
 # Output formats
-codebase-cli validate --output json
-codebase-cli validate --output table
+codebase-interface validate --output json
+codebase-interface validate --output table
+
+# Configuration management
+codebase-interface init-config basic           # Create configuration from preset
+codebase-interface validate-config            # Validate configuration against schema
+codebase-interface schema --output schema.json # Export schema for editor integration
+
+# Short alias available for all commands
+cbi validate
+cbi init-config go-project
+cbi validate-config
 ```
 
 ### Exit Codes
@@ -224,6 +263,37 @@ codebase-cli validate --output table
 ---
 
 ## Configuration
+
+### Configuration Validation & Management
+
+The CLI provides comprehensive configuration management with JSON Schema validation:
+
+#### Schema Validation Features
+
+- **Type Safety:** Validates data types (boolean, string, number, array)
+- **Range Validation:** Ensures numeric values are within valid ranges (0.0-1.0)
+- **Enum Validation:** Checks string values against allowed options
+- **Property Validation:** Detects typos and unknown configuration keys
+- **Required Field Validation:** Ensures all mandatory fields are present
+- **Editor Integration:** Provides autocomplete and real-time validation in IDEs
+
+#### Configuration Presets
+
+```bash
+# Available preset configurations
+cbi init-config basic        # Simple validation rules
+cbi init-config strict       # Comprehensive validation for production
+cbi init-config beginner     # Gentle validation for learning projects
+cbi init-config open-source  # Optimized for public repositories
+cbi init-config go-project   # Go-specific validation rules
+```
+
+#### Schema Integration
+
+```yaml
+# Enable editor autocomplete and validation
+# yaml-language-server: $schema=https://raw.githubusercontent.com/codebase-interface/cli/refs/heads/main/cmd/schema/codebase-validation.schema.json
+```
 
 ### Default Configuration File: `.codebase-validation.yml`
 
