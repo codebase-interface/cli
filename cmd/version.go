@@ -8,10 +8,10 @@ import (
 
 var versionCmd = &cobra.Command{
 	Use:   "version",
-	Short: "Print the version number of codebase-cli",
-	Long:  "Print the version number of codebase-cli",
+	Short: "Print the version number of codebase-interface",
+	Long:  "Print the version number of codebase-interface",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("codebase-cli v0.1.0")
+		fmt.Println("codebase-interface v0.1.0")
 	},
 }
 

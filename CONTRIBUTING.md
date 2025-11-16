@@ -28,6 +28,8 @@ task setup
 task build
 ```
 
+**📝 Note:** The `bin/` directory is git-ignored. Built binaries are not committed to the repository - each developer builds locally.
+
 4. Run tests:
 ```bash
 task test

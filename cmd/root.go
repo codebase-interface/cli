@@ -5,9 +5,10 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "codebase-cli",
-	Short: "A CLI for validating codebase structure and standards",
-	Long: `Codebase CLI validates essential files and configurations for proper codebase setup.
+	Use:     "codebase-interface",
+	Aliases: []string{"cbi"},
+	Short:   "A CLI for validating codebase structure and standards",
+	Long: `Codebase Interface CLI validates essential files and configurations for proper codebase setup.
 It checks for README.md, CONTRIBUTING.md, Git configuration files, and development standards.`,
 }
 

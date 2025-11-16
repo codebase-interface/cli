@@ -4,7 +4,8 @@ tasks:
   build:
     desc: Build the CLI binary
     cmds:
-      - go build -o bin/codebase-cli ./cmd/codebase-cli
+      - go build -o bin/codebase-interface ./cmd/codebase-interface
+      - cd bin && ln -sf codebase-interface cbi
 
   test:
     desc: Run all tests
@@ -31,7 +32,7 @@ tasks:
   install:
     desc: Install CLI locally
     cmds:
-      - go install ./cmd/codebase-cli
+      - go install ./cmd/codebase-interface
 
   clean:
     desc: Clean build artifacts
@@ -62,7 +63,7 @@ tasks:
     desc: Run the CLI on itself for validation
     deps: [build]
     cmds:
-      - ./bin/codebase-cli validate
+      - ./bin/codebase-interface validate
 
   dev:
     desc: Development workflow - build and test

@@ -19,20 +19,24 @@
 # Clone and build in one go
 git clone https://github.com/codebase-interface/cli.git
 cd cli
-go build -o codebase-cli ./cmd/codebase-cli
+go build -o codebase-interface ./cmd/codebase-interface
 
 # Move to your PATH for global access
-sudo mv codebase-cli /usr/local/bin/
+sudo mv codebase-interface /usr/local/bin/
 ```
 
-**🎉 That's it!** You now have the `codebase-cli` command available globally.
+**📝 Note:** The `bin/` directory is git-ignored, so you'll need to build the binary locally.
+
+**🎉 That's it!** You now have the `codebase-interface` command available globally, or use the shorter `cbi` alias.
 
 ## ⚡ Your First Validation
 
 Let's validate your first project! Navigate to any project directory and run:
 
 ```bash
-codebase-cli validate
+codebase-interface validate
+# or use the short alias
+cbi validate
 ```
 
 **What happens next?** The CLI will scan your project and show you exactly what's missing or could be improved:
@@ -61,18 +65,23 @@ This is your primary tool for checking project quality. Here's how to wield it:
 
 ```bash
 # Validate current directory (most common)
-codebase-cli validate
+codebase-interface validate
+# or: cbi validate
 
 # Check a specific project
-codebase-cli validate --path /path/to/my-awesome-project
+codebase-interface validate --path /path/to/my-awesome-project
+# or: cbi validate --path /path/to/my-awesome-project
 
 # Get machine-readable output
-codebase-cli validate --output json
+codebase-interface validate --output json
+# or: cbi validate --output json
 
 # Focus on specific areas
-codebase-cli validate --agent essential-files
-codebase-cli validate --agent git-configuration  
-codebase-cli validate --agent development-standards
+codebase-interface validate --agent essential-files
+codebase-interface validate --agent git-configuration  
+codebase-interface validate --agent development-standards
+# or use the short alias:
+# cbi validate --agent essential-files
 ```
 
 ### 🛠️ Command Options Reference
@@ -94,11 +103,13 @@ codebase-cli validate --agent development-standards
 
 ```bash
 # Check what version you're running
-codebase-cli version
+codebase-interface version
+# or: cbi version
 
 # Get help anytime
-codebase-cli help
-codebase-cli help validate
+codebase-interface help
+codebase-interface help validate
+# or: cbi help
 ```
 
 ## Output Formats
@@ -185,16 +196,17 @@ Integrate with your CI/CD pipeline effortlessly:
 
 ```bash
 # Generate a detailed JSON report
-codebase-cli validate --output json > validation-report.json
+codebase-interface validate --output json > validation-report.json
+# or: cbi validate --output json > validation-report.json
 
 # Simple CI/CD script that works everywhere
 #!/bin/bash
-if codebase-cli validate --output json > /dev/null 2>&1; then
+if codebase-interface validate --output json > /dev/null 2>&1; then
     echo "✅ Your codebase rocks! Validation passed"
     exit 0
 else
     echo "⚠️  Time for some improvements!"
-    codebase-cli validate
+    codebase-interface validate
     exit 1
 fi
 ```
@@ -205,13 +217,16 @@ Sometimes you want to check just one thing:
 
 ```bash
 # Just the essentials
-codebase-cli validate --agent essential-files
+codebase-interface validate --agent essential-files
+# or: cbi validate --agent essential-files
 
 # Only Git setup
-codebase-cli validate --agent git-configuration
+codebase-interface validate --agent git-configuration
+# or: cbi validate --agent git-configuration
 
 # Just development practices
-codebase-cli validate --agent development-standards
+codebase-interface validate --agent development-standards
+# or: cbi validate --agent development-standards
 ```
 
 *Perfect for when you're working on specific improvements!*
@@ -222,7 +237,8 @@ Want to customize the validation rules? Easy!
 
 ```bash
 # The CLI automatically finds your .codebase-validation.yml file
-codebase-cli validate
+codebase-interface validate
+# or: cbi validate
 
 # Pro tip: Check out our examples directory for ready-to-use configs!
 ```
@@ -260,10 +276,12 @@ Need to see exactly what's happening?
 
 ```bash
 # Get all the details in JSON format
-codebase-cli validate --output json
+codebase-interface validate --output json
+# or: cbi validate --output json
 
 # Pretty-print with jq if you have it installed
-codebase-cli validate --output json | jq '.'
+codebase-interface validate --output json | jq '.'
+# or: cbi validate --output json | jq '.'
 ```
 
 ## 🚀 Power User Features
@@ -275,7 +293,7 @@ Add this to your `.git/hooks/pre-commit` file:
 ```bash
 #!/bin/bash
 echo "🔍 Running codebase validation..."
-if ! codebase-cli validate; then
+if ! codebase-interface validate; then
     echo "❌ Hold up! Fix these issues before committing."
     exit 1
 fi
@@ -289,7 +307,8 @@ echo "✅ All good! Committing..."
 Most IDEs can run external tools. Set yours up with:
 
 ```bash
-codebase-cli validate --path ${PROJECT_DIR}
+codebase-interface validate --path ${PROJECT_DIR}
+# or: cbi validate --path ${PROJECT_DIR}
 ```
 
 *Works great with VS Code tasks, IntelliJ run configurations, and more!*
@@ -314,10 +333,10 @@ jobs:
           go-version: '1.21'
           
       - name: "📎 Build CLI"
-        run: go build -o codebase-cli ./cmd/codebase-cli
+        run: go build -o codebase-interface ./cmd/codebase-interface
         
       - name: "✨ Validate Codebase"
-        run: ./codebase-cli validate
+        run: ./codebase-interface validate
 ```
 
 ## 🎮 Advanced Techniques
@@ -330,13 +349,14 @@ Got multiple projects? Validate them all:
 # Check all your awesome projects
 for project in frontend backend mobile; do
     echo "🔍 Validating $project..."
-    codebase-cli validate --path "./$project"
+    codebase-interface validate --path "./$project"
+    # or: cbi validate --path "./$project"
 done
 
 # Or check different environments
-codebase-cli validate --path ./development
-codebase-cli validate --path ./staging
-codebase-cli validate --path ./production
+codebase-interface validate --path ./development
+codebase-interface validate --path ./staging
+codebase-interface validate --path ./production
 ```
 
 ### 📈 Automated Reporting & Analytics
@@ -349,7 +369,8 @@ Track your project quality over time:
 timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
 report_file="quality-report-${timestamp}.json"
 
-codebase-cli validate --output json > "reports/$report_file"
+codebase-interface validate --output json > "reports/$report_file"
+# or: cbi validate --output json > "reports/$report_file"
 echo "📈 Quality report saved: $report_file"
 
 # Send to your monitoring system

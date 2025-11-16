@@ -21,26 +21,30 @@ cd cli
 task build
 ```
 
+This creates the `codebase-interface` binary in the `bin/` directory (which is git-ignored).
+
 ### Install Locally
 
 ```bash
 task install
 ```
 
+This installs the binary to your `$GOPATH/bin` directory.
+
 ## Quick Start
 
 ```bash
 # Validate current directory
-codebase-cli validate
+codebase-interface validate
 
 # Validate specific path
-codebase-cli validate --path /path/to/project
+codebase-interface validate --path /path/to/project
 
 # JSON output
-codebase-cli validate --output json
+codebase-interface validate --output json
 
 # Run specific validation agent
-codebase-cli validate --agent essential-files
+codebase-interface validate --agent essential-files
 ```
 
 ## Validation Agents
@@ -97,7 +101,7 @@ validation:
 Validates codebase structure and standards.
 
 ```bash
-codebase-cli validate [flags]
+codebase-interface validate [flags]
 
 Flags:
   -a, --agent string    Run specific agent (essential-files, git-configuration, development-standards)
@@ -110,7 +114,7 @@ Flags:
 Print version information.
 
 ```bash
-codebase-cli version
+codebase-interface version
 ```
 
 ## Development
