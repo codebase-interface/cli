@@ -2,22 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://cli.codebaseinterface.org/</loc>
-         <lastmod>2025-11-15</lastmod>
+         <lastmod>2025-11-16</lastmod>
     </url>
     <url>
          <loc>https://cli.codebaseinterface.org/agents/</loc>
-         <lastmod>2025-11-15</lastmod>
+         <lastmod>2025-11-16</lastmod>
     </url>
     <url>
          <loc>https://cli.codebaseinterface.org/configuration/</loc>
-         <lastmod>2025-11-15</lastmod>
+         <lastmod>2025-11-16</lastmod>
     </url>
     <url>
          <loc>https://cli.codebaseinterface.org/usage/</loc>
-         <lastmod>2025-11-15</lastmod>
+         <lastmod>2025-11-16</lastmod>
     </url>
     <url>
          <loc>https://cli.codebaseinterface.org/examples/</loc>
-         <lastmod>2025-11-15</lastmod>
+         <lastmod>2025-11-16</lastmod>
     </url>
 </urlset>
